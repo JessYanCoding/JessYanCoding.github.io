@@ -119,7 +119,7 @@ stub.setVisibility(View.VISIBLE);
 # 4.Space
 
 ### 介绍:
-* `Space`用于在布局文件中占位(如分割线)，不绘制，但是有宽高，用于解决过渡绘制
+* `Space`用于在布局文件中占位(如分割线)，不绘制(未实现onDraw方法)，但是有宽高，用于解决过渡绘制
 
 ### 用法:
 
@@ -131,4 +131,4 @@ stub.setVisibility(View.VISIBLE);
 ```
 
 ### 注意:
-* `Space只能设置宽高`，因为他没有重写`onDraw`方法，所有就算给设置了`android:background`也是无效的
+* `Space`只能设置宽高，因为他没有重写`onDraw`方法，所有就算设置了`android:background`也是无效的
