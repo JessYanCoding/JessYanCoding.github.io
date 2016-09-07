@@ -68,6 +68,7 @@ public interface UserContract {
 
 ```
 
+
 ## View
 
 > 一般让**Activity**或**Fragment**实现**Contract**中定义的**View**接口,供**Presenter**调用对应方法操作**UI**,**BaseActivity**默认注入**Presenter**,如想使用**Presenter**,必须指定**Presenter的范型**,和实现**setupActivityComponent**来提供**Presenter**需要的[**Component**](https://github.com/JessYanCoding/MVPArms/wiki#2.4.6)和[**Module**](https://github.com/JessYanCoding/MVPArms/wiki#2.4.5)
@@ -125,7 +126,7 @@ public class UserModel extends BaseModel<ServiceManager,CacheManager> implements
 
 > **Presenter**在**MVP**中的大部分的作用为通过从**Model**层接口获取数据,在调用**View**层接口显示数据,首先实现**BasePresenter**,指定**Model**和**View**的范型,注意一定要指定**Contract**中定义的接口,**Presenter**需要的**Model**和**View**,都使用**Dagger2**注入,这样即解藕又方便测试[怎么注入?](https://github.com/JessYanCoding/MVPArms/wiki#2.4.2)
 
-```
+```java
 @ActivityScope
 public class UserPresenter extends BasePresenter<UserContract.Model, UserContract.View> {
 
