@@ -124,7 +124,7 @@ public class UserModel extends BaseModel<ServiceManager,CacheManager> implements
 
 ## Presenter
 
-> **Presenter**在**MVP**中的大部分的作用为通过从**Model**层接口获取数据,在调用**View**层接口显示数据,首先实现**BasePresenter**,指定**Model**和**View**的范型,注意一定要指定**Contract**中定义的接口,**Presenter**需要的**Model**和**View**,都使用**Dagger2**注入,这样即解藕又方便测试[怎么注入?](https://github.com/JessYanCoding/MVPArms/wiki#2.4.2)
+> **Presenter**在**MVP**中的大部分的作用为通过从**Model**层接口获取数据,在调用**View**层接口显示数据,首先实现**BasePresenter**,指定**Model**和**View**的范型,注意一定要指定**Contract**中定义的接口,**Presenter**需要的**Model**和**View**,都使用**Dagger2**注入,这样即解藕又方便测试,[怎么注入?](https://github.com/JessYanCoding/MVPArms/wiki#2.4.2)
 
 ```java
 @ActivityScope
