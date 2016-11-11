@@ -1,3 +1,12 @@
+---
+layout: post
+title: 我们为什么要把Dagger2,MVP以及Rxjava引入项目中?
+tags: [MVP,Rxjava,Dagger]
+modified: 2016-11-11
+image:
+  feature: abstract-10.jpg
+---
+
 # Why?
 
 ## 我们为什么要把Dagger2,MVP以及Rxjava引入项目中?
