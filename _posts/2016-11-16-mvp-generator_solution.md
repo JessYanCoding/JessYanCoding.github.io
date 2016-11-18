@@ -7,7 +7,6 @@ image:
   feature: abstract-11.jpg
 ---
 
-# 项目里使用MVP和Dagger的有福了!!!绝对提升效率
 
 * 在之前的[文章里](http://gold.xitu.io/entry/5826c2f40ce4630056f8a18f/detail)提到了我们为什么要在项目中使用`MVP`,`Dagger`,`Rxjava`,为很多才接触这些技术的朋友解答了疑惑
 
