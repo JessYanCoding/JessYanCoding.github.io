@@ -28,11 +28,11 @@ image:
 
 ## 注意事项
 
-* 至于本框架一个页面要生存那些文件,	请以**Demo**中**mvp**包下的UserActivity为例子,在参照一下注意事项
+* 至于本框架一个页面要生成哪些文件,请以**Demo**中**mvp**包下的UserActivity为例子,再参照以下注意事项
 
 * 通过Template生成对应页面的MVP和Dagger代码,请注意输入框中输入的名字必须相同
 
-* 由于每个项目包结构都不一定相同,所以每生成一个文件需要自己导入import包名,可以在设置中设置自动导入包名
+* 由于每个项目包结构都不一定相同,所以每生成一个文件需要自己import包名,可以在设置中设置自动导入包名
 
 * 请在对应包下按以下顺序生成对应代码,Contract->Model->Presenter->Activity->Module->Component,如我要为一个名字为User的Activity生成对应文件,那我要先在Contract包下使用Contract模版生成UserContract,按此顺序直到生成完UserComponent
 
