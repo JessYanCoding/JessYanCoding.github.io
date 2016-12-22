@@ -50,12 +50,15 @@ image:
 
 * 我们现在需要一个类叫**Car**,**Car**中需要持有一个叫**People**的对象,**People**中又需要持有**key**对象,Ok,这还不简单
 
-```
+``` java
 Car car = new Car(new People(new Key()));
+
 ```
 * 但是大型项目的实际情况是这样的
 
-```
+
+``` java
+
 A a = new A();
 B b = new B(a);
 
