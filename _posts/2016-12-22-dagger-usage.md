@@ -48,6 +48,6 @@ public interface ActivityComponent {
 
 # 如何用?
 
-在项目中用到最多的就是向**Presenter**提供**View**和**Model**的同时,在向每一层提供所需要的单例类,并且使用Dagger不断的重用**Presenter**和**Model**,其实`Dagger`本来就抽象,说再多不如直接看代码是怎么实现的,然后照着模版直接在自己项目中使用,本文的主题不是在项目中怎么灵活使用`Dagger`吗?那就直接在项目中找答案不是更快?
+在项目中用到最多的就是向**Presenter**提供**View**和**Model**的同时,在向每一层提供所需要的单例类,并且使用Dagger不断的重用**Presenter**和**Model**,其实`Dagger`本来就抽象,说再多不如直接看代码是怎么实现的,然后照着模版直接在自己项目中使用,本文的主题不就是在项目中怎么灵活使用`Dagger`吗?那就直接在项目中找答案不是更快?
 
 # [Launch?](https://github.com/JessYanCoding/MVPArms/wiki)
