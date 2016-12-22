@@ -24,9 +24,9 @@ image:
 
 之前我看了几个使用**MVP+Dagger+Retrofit**开发,并且有一定**star**量的开源项目,所以对比了下我的框架,有以下几点:
 
-1. 使用Dagger的场景太少了,大部分只是使用Dagger注入MVP类,并且有些Retrofit都是自己new,并没有使用Dagger管理,甚至有些使用一次接口就**retrofit.create(ApiService.class)**一次,这个本可以使用Dagger将它作为单例来调用的
+1.使用Dagger的场景太少了,大部分只是使用Dagger注入MVP类,并且有些Retrofit都是自己new,并没有使用Dagger管理,甚至有些使用一次接口就**retrofit.create(ApiService.class)**一次,这个本可以使用Dagger将它作为单例来调用的
 
-2. 有一些设计的**Component**和**Module**完全只是用来注入Activity和一些单例
+2.有一些设计的**Component**和**Module**完全只是用来注入Activity和一些单例
 
 ```java
 
@@ -42,9 +42,9 @@ public interface ActivityComponent {
 
 只要多一个Activity,他就可以一直重载inject方法,于是就可以用一组**component**,**module**来为所有Activity注入,但是如果遇到**Activity**需要临时注入一些其他的组件,并且每个Activity要注入的组件都不一样,就没办法了,缺少灵活性
 
-3. 还是和第2条有关,如果只有一个**Module**,`Dagger`就无法根据每个**Presenter**的需要,提供多个不同的**Model**,比如这个**Presenter**使用过这个接口,并且缓存已经在**Model**中写好,其他**Presenter**如果也要用到这个接口,就可以直接重用这个**Model**,**MVP**最大的好处之一就是可以重用**M**和**P**层
+3.还是和第2条有关,如果只有一个**Module**,`Dagger`就无法根据每个**Presenter**的需要,提供多个不同的**Model**,比如这个**Presenter**使用过这个接口,并且缓存已经在**Model**中写好,其他**Presenter**如果也要用到这个接口,就可以直接重用这个**Model**,**MVP**最大的好处之一就是可以重用**M**和**P**层
 
-4. 有些没有**Model**层,直接给**Presenter**注入**Retrofit Api**,所有网络请求逻辑在**Presenter**中,如果现在需求变了,需要加入缓存,就需要更改**Presenter**的逻辑,这样就可能影响一些和这个功能无关的逻辑,如果有**Model**层,里面持有请求网络和缓存的功能类,这样**Presenter**就不需要管,数据是从网络还是数据库获取的,**Model**层只用保证返回给**Presenter**的数据无误,而**Presenter**只用专注于逻辑,这样各自只用保证各自的职责,屏蔽细节,易扩展,出错也好定位
+4.有些没有**Model**层,直接给**Presenter**注入**Retrofit Api**,所有网络请求逻辑在**Presenter**中,如果现在需求变了,需要加入缓存,就需要更改**Presenter**的逻辑,这样就可能影响一些和这个功能无关的逻辑,如果有**Model**层,里面持有请求网络和缓存的功能类,这样**Presenter**就不需要管,数据是从网络还是数据库获取的,**Model**层只用保证返回给**Presenter**的数据无误,而**Presenter**只用专注于逻辑,这样各自只用保证各自的职责,屏蔽细节,易扩展,出错也好定位
 
 # 如何用?
 
