@@ -6,7 +6,7 @@ modified: 2016-09-07
 image:
   feature: abstract-5.jpg
 ---
-
+「已投稿安卓巴士公众号」
 # 前言
 
 * 今年的Android技术圈中`MVP`,`Dagger2`,`Rxjava`,`Retrofit`这些词汇非常火,随便打开一个技术论坛都充斥着大量的关于这些技术的文章,`Github`也充斥着各种以`基于MVP+Retrofit+RxJava＋Dagger2+MaterialDesign开发的xxxx`为标题的开源项目或**Demo**.
