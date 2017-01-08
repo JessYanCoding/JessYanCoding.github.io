@@ -67,7 +67,7 @@ CacheProviders cacheProviders = new RxCache.Builder()
 
 值得一提的是,如果需要知道返回的结果是来自哪里(本地,内存还是网络),是否加密,则可以使用`Observable<Reply<List<Repo>>>`作为方法的返回值,这样`RxCache`则会使用**Reply**包装结果,如果没这个需求则直接在范型中声明结果的数据类型`Observable<List<Repo>>`
 
-#### 例外
+### 例外
 
 如果构建`RxCache`的时候将**useExpiredDataIfLoaderNotAvailable**设置成**true**,会在数据为空或者发生错误时,忽视**EvictProvider**为**true**或者缓存过期的情况,继续使用缓存(前提是之前请求过有缓存)
 
@@ -76,7 +76,7 @@ CacheProviders cacheProviders = new RxCache.Builder()
 
 有很多开发者最困惑的就是这两个参数的意义,两个一起传以及不传会有影响吗?说到这里就要提下,`RxCache`是怎么存储缓存的,`RxCache`并不是通过使用**URL**充当标识符来储存和获取缓存的
 
-#### 那是什么呢？
+### 那是什么呢？
 
 没错`RxCache`就是通过这两个对象加上上面**CacheProviders**接口中声明的方法名,组合起来一个标识符,通过这个标识符来存储和获取缓存
 
@@ -90,16 +90,16 @@ dynamicKey或DynamicKeyGroup为空时则返回空字符串,即什么都不传的
 "方法名$d$d$d$$g$g$g$"
 ```
 
-#### 什么意思呢?
+### 什么意思呢?
 
 比如`RxCache`,的内存缓存用的是**Map**,它就用这个标识符put和get
 数据,如果标识符不一致那就取不到想取的缓存
 
-#### 和我们有什么关系呢?
+### 和我们有什么关系呢?
 
 举个例子,我们一个接口具有分页功能,我们使用`RxCache`给他设置了3分钟的缓存,如果这两个对象都不传入参数中,它会默认使用这个接口的方法名去存储和获取缓存,意思是我们之前使用这个接口获取到了第一页的数据,三分钟以内多次调用这个接口,请求其他分页的数据,它返回的缓存还是第一页的数据,直到缓存过期,所以我们现在想具备分页功能,必须传入**DynamicKey**,**DynamicKey**内部存储有一个**key**,我们在构建的时候传入页数,`RxCache`将会根据不同的页数分别保存一份缓存,它内部做的事就是将方法名+DynamicKey变成一个**String**类型的标识符去获取和存储缓存
 
-#### DynamicKey和DynamicKeyGroup有什么关系呢
+### DynamicKey和DynamicKeyGroup有什么关系呢
 
 **DynamicKey**存储有一个**Key**,**DynamicKey**的应用场景: 请求同一个接口,需要参照一个变量的不同返回不同的数据,比如分页,构造时传入页数就可以了
 
@@ -112,15 +112,15 @@ dynamicKey或DynamicKeyGroup为空时则返回空字符串,即什么都不传的
 
 这三个对象内部都保存有一个**boolean**类型的字段,其意思为是否驱逐(使用或删除)缓存,`RxCache`在取到未过期的缓存时,会根据这个**boolean**字段,考虑是否使用这个缓存,如果为**true**,就会重新通过`Retrofit`获取新的数据,如果为**false**就会使用这个缓存
 
-#### 这三个对象有什么关系呢?
+### 这三个对象有什么关系呢?
 
 这三个对象是相互继承关系,继承关系为**EvictProvider** < **EvictDynamicKey** < **EvictDynamicKeyGroup**,这三个对象你只能传其中的一个,多传一个都会报错,按理说你不管传那个对象都一样,因为里面都保存有一个**boolean**字段,根据这个字段判断是否使用缓存
 
-#### 不同在哪呢?
+### 不同在哪呢?
 
 如果有未过期的缓存,并且里面的**boolean**为**false**时,你传这三个中的哪一个都是一样的,但是在**boolean**为**true**时,这时就有区别了,`RxCache`会在`Retrofit`请求到新数据后,在**boolean**为**true**时删除对应的缓存
 
-#### 删除规则是什么呢?
+### 删除规则是什么呢?
 还是以请求一个接口,该接口的数据会根据不同的分页返回不同的数据,并且同一个分页还要根据不同用户显示不同的数据为例
 
 三个都不传,`RxCache`会自己`new EvictProvider(false);`,这样默认为**false**就不会删除任何缓存
@@ -142,6 +142,77 @@ dynamicKey或DynamicKeyGroup为空时则返回空字符串,即什么都不传的
 
 以后每次取缓存时,都会判断**timeAtWhichWasPersisted**+**@LifeCache**的值是否小于当前时间(毫秒),小于则过期,则会立即清理当前缓存,并使用**Retrofit**重新请求最新的数据,如果**EvictProvider**为**true**不管缓存是否过期都不会使用缓存
 
+> @EncryptKey & @Encrypt
+----
+
+这两个注解的作用都是用来给缓存加密,区别在于作用域不一样
+
+**@EncryptKey**是作用在接口上
+
+```
+@EncryptKey("123")
+public interface CacheProviders {
+
+}
+```
+
+而**@Encrypt**是作用在方法上
+
+```
+@EncryptKey("123")
+public interface CacheProviders {
+
+	@Encrypt
+	Observable<Reply<User>> getCurrentUser(Observable<User> oUser, EvictProvider evictProvider);
+}
+
+}
+```
+
+如果需要给某个接口的缓存做加密的操作,则在对应的方法上加上**@Encrypt**,在存储和获取缓存时,`RxCache`就会使用**@EncryptKey**的值作为**Key**给缓存数据进行加解密,因此每个**Interface**中的所有的方法都只能使用相同的**Key**
+
+值得注意的时,`RxCache`只会给本地缓存进行加密操作,并不会给内存缓存进行加密,给本地数据加密使用的是`Java`自带的**CipherInputStream**,解密使用的是**CipherOutputStream**
+
+
+> @Expirable 
+----
+
+还记得我们在构建`RxCache`时,有一个**setMaxMBPersistenceCache**方法,这个可以设置,本地缓存的最大容量,单位为**MB**,如果没设置则默认为**100MB**
+
+### 这个最大容量和@Expirable又有什么关系呢?
+
+当然有!还记得我之前说过在每次`Retrofit`重新获取最新数据时,返回数据前会将最新数据在内存缓存和本地缓存中各存一份
+
+存储完毕后,会检查现在的本地缓存大小,如果现在本地缓存中存储的所有缓存大小加起来大于或者等于**setMaxMBPersistenceCache**中设置的大小(默认为100MB)的百分之95,`RxCache`就会做一些操作,将总的缓存大小控制在百分之70以下
+
+### 做的什么操作?
+
+很简单,`RxCache`会遍历,构建**RxCache**时传入的**cacheDirectory**中的所有缓存数据,一个个删除直到总大小小于百分70,遍历的顺序不能保证,所以搞不好对你特别重要的缓存就被删除了,这时**@Expirable**就派上用场了,在方法上使用它并且给它设置为**false**(如果没使用这个注解,则默认为**true**),就可以保证这个接口的缓存数据,在每次需要清理时都幸免于难
+
+
+```
+   @Expirable(false)
+	Observable<Reply<User>> getCurrentUser(Observable<User> oUser, EvictProvider evictProvider);
+```
+
+值得注意的是: 构建`RxCache`时**persistence**方法传入的**cacheDirectory**,是用来存放**RxCache**本地缓存的文件夹,这个文件夹里最好不要有除**RxCache**之外的任何数据,这样会在每次需要遍历清理缓存时,节省不必要的开销,因为`RxCache`并没检查文件名,不管是不是自己的**缓存**,他都会去遍历获取
+
+> @SchemeMigration & @Migration 
+----
+
+这两个注解是用来迁移数据的,用法:
+
+```
+@SchemeMigration({
+            @Migration(version = 1, evictClasses = {Mock.class}),
+            @Migration(version = 2, evictClasses = {Mock2.class})
+    })
+interface Providers {}
+
+```
+
+### 什么叫迁移数据呢?
+现在已经凌晨了,太晚了,明天再说
 
 未完待续...
 
