@@ -13,13 +13,14 @@ image:
 
 
 # 前言
-`Retrifit`无疑是当下最火的网络请求库,与同门师兄`Okhttp`配合使用,简直是每个项目的标配,因为`Okhttp`自带缓存,所以很多人并不关心其他缓存库,但是使用过`Okhttp`缓存的小伙伴,肯定知道`Okhttp`的缓存必须配合**Header**使用,比较麻烦,也不够灵活,所以现在为大家推荐一款专门为`Retrifit`打造的缓存库`RxCache`
+`Retrofit`无疑是当下最火的网络请求库,与同门师兄`Okhttp`配合使用,简直是每个项目的标配,因为`Okhttp`自带缓存,所以很多人并不关心其他缓存库,但是使用过`Okhttp`缓存的小伙伴,肯定知道`Okhttp`的缓存必须配合**Header**使用,比较麻烦,也不够灵活,所以现在为大家推荐一款专门为`Retrifit`打造的缓存库`RxCache`
 
 > 项目地址: [RxCache](https://github.com/VictorAlbertos/RxCache) Demo地址: [RxCacheSample](https://github.com/VictorAlbertos/RxCacheSamples)
 
 
 # 简介
-`RxCache`使用注解来为`Retrofit`配置缓存信息,内部使用动态代理和`Dagger`来实现,这个库的资料相对较少,官方的**Demo**又全是英文的,这无疑给开发者增加了使用难度,其实我英文也不好,但是源码是通用的啊,所以我为大家从源码的角度来讲解此库,此库源码的难点其实都在`Dagger`注入上,我先为大家讲解用法,后面会再写篇文章讲解源码,先给张**RxCache**的架构图,让大家尝尝鲜,请期待我后面的源码分析😏
+`RxCache`使用注解来为`Retrofit`配置缓存信息,内部使用动态代理和`Dagger`来实现,这个库的资料相对较少,官方的**Demo**又全是英文的,这无疑给开发者增加了使用难度,其实我英文也不好,但是源码是通用的啊,所以我为大家从源码的角度来讲解此库,此库源码的难点其实都在`Dagger`注入上,我先为大家讲解用法,后面会再写篇文章讲解源码,在学习`Dagger`的朋友除了建议看看我的[`MVPArms`](https://github.com/JessYanCoding/MVPArms/wiki)外,还可以看看这个`RxCache`的源码,能学到很多东西,先给张**RxCache**的架构图,让大家尝尝鲜,请期待我后面的源码分析😏
+
 
 ![](http://jessyan.me/images/RxCache.png)
 
