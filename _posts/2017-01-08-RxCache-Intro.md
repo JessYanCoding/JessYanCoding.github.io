@@ -92,8 +92,7 @@ dynamicKey或DynamicKeyGroup为空时则返回空字符串,即什么都不传的
 
 ### 什么意思呢?
 
-比如`RxCache`,的内存缓存用的是**Map**,它就用这个标识符put和get
-数据,如果标识符不一致那就取不到想取的缓存
+比如`RxCache`,的内存缓存使用的是**Map**,它就用这个标识符作为**Key**,put和get数据(本地缓存则是将这个标识符作为文件名,使用流写入或读取这个文件,来储存或获取缓存),如果储存和获取的标识符不一致那就取不到想取的缓存
 
 ### 和我们有什么关系呢?
 
@@ -200,7 +199,7 @@ public interface CacheProviders {
 > @SchemeMigration & @Migration 
 ----
 
-这两个注解是用来迁移数据的,用法:
+这两个注解是用来数据迁移的,用法:
 
 ```
 @SchemeMigration({
@@ -211,9 +210,103 @@ interface Providers {}
 
 ```
 
-### 什么叫迁移数据呢?
-现在已经凌晨了,太晚了,明天再说
+### 什么叫数据迁移呢?
 
-未完待续...
+简单的说就是在最新的版本中某个接口返回值类型内部发生了改变,从而获取数据的方式发生了改变,但是存储在本地的数据,是未改变的版本,这样在反序列化时就可能发生错误,为了规避这个风险,作者就加入了数据迁移的功能
+
+### 有什么应用场景呢?
+
+可能上面的话,不是很好理解,举个非常简单的例子:
+
+```
+
+public class Mock{
+	private int id;
+}
+
+```
+
+**Mock**里面有一个字段**id**,现在是一个整型**int**,能满足我们现在的需求,但是随着产品的迭代,发现**int**不够用了
+
+```
+
+public class Mock{
+	private long id;
+}
+
+```
+
+为了满足现在的需求,我们使用**long**代替**int**,由于缓存中的**Mock**还是之前未改变的版本,并且未过期,在使用本地缓存时会将数据反序列化,将**int**变为**long**,就会出现问题
+
+### 数据迁移是怎么解决上面的问题呢？
+
+其实非常简单,就是使用注解声明,之前有缓存并且内部修改过的**class**,**RxCache**会把含有这些**class**的缓存全部清除掉
+
+### RxCache是怎么操作的呢?
+
+值得一提的是,在每次创建接口的动态代理时,也就是在每次调用`RxCache.using(CacheProviders.class)`时,会执行两个操作,清理含有**@Migration**中声明的**evictClasses**的缓存,以及遍历本地缓存文件夹清理所有已经过期的缓存
+
+每次清理完需要数据迁移的缓存时,会将**version**值最大的**@Migration**的**version**值保存到本地    
+
+```
+@SchemeMigration({
+            @Migration(version = 1, evictClasses = {Mock.class}),
+            @Migration(version = 3, evictClasses = {Mock3.class}),
+            @Migration(version = 2, evictClasses = {Mock2.class})
+    })
+interface Providers {}
+
+```
+
+如上面的声明方式,它会将3保存到本地,每次调用**using()**,开始数据迁移时会将上次保存的**version**值从本地取出来,会在**@SchemeMigration**中查找大于这个**version**值的**@Migration**,取出里面**evictClasses**,去重后,遍历所有本地缓存,只要缓存数据中含有你声明的**class**,就将这个缓存清除
+
+比如**evictClasses**中声明了**Mock.class**,会把以**Observable< List< Mock >>**,**Observable< Map< String,Mock > >**,**Observable < Mock[] >**或者**Observable< Mock >**作为返回值的接口缓存全部清理掉,然后在将最大**version**值记录到本地
+
+所以每次有需要数据迁移的类时,必须在**@SchemeMigration**中添加新的**@Migration**,并且注解中**version**的值必须**+1**,这样才会达到数据迁移的效果
+
+```
+@SchemeMigration({
+            @Migration(version = 1, evictClasses = {Mock.class}),
+            @Migration(version = 3, evictClasses = {Mock3.class}),
+            @Migration(version = 2, evictClasses = {Mock2.class}),
+            @Migration(version = 4, evictClasses = {Mock2.class})
+            
+    })
+interface Providers {}
+
+```
+如在上面的基础上,**Mock2**内部又发生改变,又需要数据迁移,就要新添加个**@Migration**,`version = 4(3+1)`,这时在调用**using()**时只会将`version = 4`的**@Migration**中**evictClasses**声明的**class**进行数据迁移(即清理含有这个**class**的缓存数据)
 
 
+> @Actionable
+----
+
+这个注解在[官方介绍](https://github.com/VictorAlbertos/RxCache#actionable_section)中说明了会使用注解处理器给使用了这个注解的**Interface**,自动生成一个相同类名以**Actionable**结尾的类文件,使用这个类的**APi**方便更好的执行写操作,没使用过,不做过多介绍
+
+# 总结
+
+到这里`RxCache`的介绍就告一段落了,相信看完这篇文章后,基本使用肯定是没问题的
+
+但是在使用中发现了一个问题,如果使用BaseResponse< T >,包裹数据的时候会出现错误,如[issue$41](https://github.com/VictorAlbertos/RxCache/issues/41 )和[issue#73](https://github.com/VictorAlbertos/RxCache/issues/73)
+
+## 分析问题
+
+上面说了`RxCache`会将`Retrofit`返回的数据封装到**Record**对象里,**Record**会判断这个数据是那种类型,会先判断这个数据是否是**Collection**(**List**的父类),**数组**还是**Map**,如果都不是他会默认这个数据就是普通的对象
+
+**Record**里有三个字段分别储存这个数据的,容器类名,容器里值的类名,和Map的Key类名,意思为如果数据类型为**List< String >**,容器类名为**List**,值类名为**String**,**Key**类名为空,如果数据类型为**Map< String,Integer >**,容器类名为**Map**,值类名为**Integer**,**key**类名为**String**
+
+这三个字段的作用就是,在取本地缓存时可以使用`Gson`根据字段类型恢复真实数据的类型,问题就在这,因为使用的是**BaseResponse< T >**包裹数据,在上面的判断里,他排除了这个数据是**List**,**数组**或**Map**后它只会认定这个数据是普通的对象,这时他只会把三个字段里中值类名保存为**BaseResponse**其他则为空,范型的类型它并没通过字段记录,所以它在取的时候自然不会正确返回T的类型
+
+## 解决问题
+
+知道问题所在后,我们现在就来解决问题,解决这个问题现在有两个方向,一个是内部解决,一个是外部解决,外部解决的方式就可以通过上面[issue#73](https://github.com/VictorAlbertos/RxCache/issues/73)所提到的方式
+
+所谓内部解决就要改这个框架的内部代码了,问题就出在**Record**在数据为普通对象的时候,他不会使用字段保存范型的类型名,所以在取本地缓存的时候就无法正确恢复数据类型
+
+解决的思路就是我们必须对数据为普通对象的时候做特殊处理,最简单的方式就是如果数据为对象时我们再判断**instanceof BaseResponse**,如果为**true**我们就重复做上面的判断
+
+即判断**BaseResponse**中,T的类型是否为**List**,**数**组,**Map**还是对象?
+
+然后在用对应的字段保存对应的类型名,取本地缓存的时候就可以用`Gson`按这些字段恢复正确的数据类型,但是这样强制的判断**instanceof**对于一个框架来说灵活性和扩展性会大打折扣,所以我后面写源码分析的时候会认真考虑下这个问题,可以的话我会**Pull Request**给`Rxcache`
+
+**- The end**
