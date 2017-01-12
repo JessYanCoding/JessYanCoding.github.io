@@ -30,7 +30,7 @@ image:
 
 1.定义接口,和`Retrofit`类似,接口中每个方法和**Retrofit**接口中的方法一一对应,每个方法的参数中必须传入对应**Retrofit**接口方法的返回值(返回值必须为**Observable**,否则报错),另外几个参数**DynamicKey**,**DynamicKeyGroup**和**EvictProvider**不是必须的,但是如果要传入,每个都只能传入一个对象,否则报错,这几个参数的意义是初学者最困惑的,后面会分析
 
-```
+```java
 /**
  * 此为RxCache官方Demo
  */
