@@ -49,7 +49,7 @@ public interface CacheProviders {
 
 2.将接口实例化,和`Retrofit`构建方式类似,将接口通过**using**方法传入,返回一个接口的动态代理对象,调用此对象的方法传入对应参数就可以实现缓存了,通过注解和传入不同的参数可以实现一些自定义的配置, so easy～
 
-```
+```java
 CacheProviders cacheProviders = new RxCache.Builder()
                 .persistence(cacheDir, new GsonSpeaker())
                 .using(CacheProviders.class);
@@ -80,7 +80,7 @@ CacheProviders cacheProviders = new RxCache.Builder()
 
 没错`RxCache`就是通过这两个对象加上上面**CacheProviders**接口中声明的方法名,组合起来一个标识符,通过这个标识符来存储和获取缓存
 
-```
+```java
 标识符规则为:
 
 方法名 + $d$d$d$" + dynamicKey.dynamicKey + "$g$g$g$" + DynamicKeyGroup.group
@@ -148,7 +148,7 @@ dynamicKey或DynamicKeyGroup为空时则返回空字符串,即什么都不传的
 
 **@EncryptKey**是作用在接口上
 
-```
+```java
 @EncryptKey("123")
 public interface CacheProviders {
 
@@ -157,7 +157,7 @@ public interface CacheProviders {
 
 而**@Encrypt**是作用在方法上
 
-```
+```java
 @EncryptKey("123")
 public interface CacheProviders {
 
@@ -189,7 +189,7 @@ public interface CacheProviders {
 很简单,`RxCache`会遍历,构建**RxCache**时传入的**cacheDirectory**中的所有缓存数据,一个个删除直到总大小小于百分70,遍历的顺序不能保证,所以搞不好对你特别重要的缓存就被删除了,这时**@Expirable**就派上用场了,在方法上使用它并且给它设置为**false**(如果没使用这个注解,则默认为**true**),就可以保证这个接口的缓存数据,在每次需要清理时都幸免于难
 
 
-```
+```java
    @Expirable(false)
 	Observable<Reply<User>> getCurrentUser(Observable<User> oUser, EvictProvider evictProvider);
 ```
@@ -201,7 +201,7 @@ public interface CacheProviders {
 
 这两个注解是用来数据迁移的,用法:
 
-```
+```java
 @SchemeMigration({
             @Migration(version = 1, evictClasses = {Mock.class}),
             @Migration(version = 2, evictClasses = {Mock2.class})
@@ -218,7 +218,7 @@ interface Providers {}
 
 可能上面的话,不是很好理解,举个非常简单的例子:
 
-```
+```java
 
 public class Mock{
 	private int id;
@@ -228,7 +228,7 @@ public class Mock{
 
 **Mock**里面有一个字段**id**,现在是一个整型**int**,能满足我们现在的需求,但是随着产品的迭代,发现**int**不够用了
 
-```
+```java
 
 public class Mock{
 	private long id;
@@ -248,7 +248,7 @@ public class Mock{
 
 每次清理完需要数据迁移的缓存时,会将**version**值最大的**@Migration**的**version**值保存到本地    
 
-```
+```java
 @SchemeMigration({
             @Migration(version = 1, evictClasses = {Mock.class}),
             @Migration(version = 3, evictClasses = {Mock3.class}),
@@ -264,7 +264,7 @@ interface Providers {}
 
 所以每次有需要数据迁移的类时,必须在**@SchemeMigration**中添加新的**@Migration**,并且注解中**version**的值必须**+1**,这样才会达到数据迁移的效果
 
-```
+```java
 @SchemeMigration({
             @Migration(version = 1, evictClasses = {Mock.class}),
             @Migration(version = 3, evictClasses = {Mock3.class}),
