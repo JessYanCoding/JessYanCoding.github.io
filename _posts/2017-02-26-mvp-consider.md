@@ -96,19 +96,19 @@ image:
 
 这样就能解决上述的缺点:
 
-1.少写了很多类和接口
+1. 少写了很多类和接口
 
-2.并且**Presenter**只需要通过**handleMessage**一个方法与**View**通信,也就不用繁琐的一直添加接口方法,只需要一个**Message**参数,通过**Message**封装数据,即使**View**需要的数据类型发生改变,也不需要更改任何方法,所以也不会影响上层调用
+2. 并且**Presenter**只需要通过**handleMessage**一个方法与**View**通信,也就不用繁琐的一直添加接口方法,只需要一个**Message**参数,通过**Message**封装数据,即使**View**需要的数据类型发生改变,也不需要更改任何方法,所以也不会影响上层调用
 
-3.随便重用**Presenter**,即使你一个**Activity**,重用10个不同的**Presenter**,那也只用实现一个**handleMessage**方法,不需要实现**View**中其他用不到的方法,通过一个方法同样能做到不同的操作
+3. 随便重用**Presenter**,即使你一个**Activity**,重用10个不同的**Presenter**,那也只用实现一个**handleMessage**方法,不需要实现**View**中其他用不到的方法,通过一个方法同样能做到不同的操作
 
-4.当**Presenter**中的方法需要**Activity**传递一些数据时,也可以将数据封装到**Message**中传给**Presenter**,这样即使需要的数据类型发生改变,也不需要更改方法,所以也不会影响上层调用
+4. 当**Presenter**中的方法需要**Activity**传递一些数据时,也可以将数据封装到**Message**中传给**Presenter**,这样即使需要的数据类型发生改变,也不需要更改方法,所以也不会影响上层调用
 
 只有能不断的灵活重用,才能感受到**MVP**的强大之处
 
 说了这么多还是要看看**Demo**,具体该怎么做吧？
 
-[Go!觉得好一定要右上角Star哦!](https://github.com/JessYanCoding/MVPArt)
+> [Go!觉得好一定要右上角Star哦!](https://github.com/JessYanCoding/MVPArt)
 
 # Tips
 
