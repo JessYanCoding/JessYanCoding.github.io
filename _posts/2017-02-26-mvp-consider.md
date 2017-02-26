@@ -7,7 +7,7 @@ image:
   feature: abstract-12.jpg
 ---
 
-# 前言(最后奉上惊喜)
+# 前言(最后奉上福利)
 
 自从`Google`在去年放出**MVP**的[官方**Sample**](https://github.com/googlesamples/android-architecture/tree/todo-mvp)后,越来越多的人开始加入**MVP**大军,**MVP**可谓在16年大放异彩,我也乘势推出了我的[**MVP**框架](https://github.com/JessYanCoding/MVPArms/wiki)狂刷了一波存在感
 
