@@ -43,13 +43,13 @@ image:
 
 # 寻求解决方法
 
-因此我看了大多数**MVP**框架,寻求如何彻底改善这个问题,像支付宝团队使用的**T-MVP**框架,是通过将**Activity**或**Fragment**作为**Presenter**,将**UI**操作抽到**Delegate**中,作为**View**层
+因此我看了大多数**MVP**框架,寻求如何彻底改善这个问题,像支付宝团队使用的**TheMVP**框架,是通过将**Activity**或**Fragment**作为**Presenter**,将**UI**操作抽到**Delegate**中,作为**View**层
 
-## T-MVP优点
+## TheMVP优点
 
 这样做的好处是,不仅可以少写很多类,而且**Presenter**直接就可以和**Activity**或**Fragment**的生命周期做绑定,且可以随便重用**View**(但大多数场景都是重用**Presenter**,因为**View**层变化总是比其它层频繁)
 
-## T-MVP缺点
+## TheMVP缺点
 
 缺点就是不能重用**Presenter**,并且对于**Presenter**的实现有限制,必须是**Activity**或**Fragment**,如果要在其他地方实现**Presenter**,如**Adapter**,**Dialog**就必须根据它的特性重新写对应的**Presenter**基类
 
