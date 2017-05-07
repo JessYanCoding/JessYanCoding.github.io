@@ -13,7 +13,7 @@ image:
 
 就在前段时间我在`鸿洋公众号`上看到了一篇文章,大概是介绍怎么封装 **BaseActivity** ,让 **Activity** 通过几行代码就可以实现 **ToolBar** 
 
-刚好我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架也更新了一个功能: `通过非继承 Activity Fragment 来实现以前需要封装进 BaseActivity  BaseFragment 通过继承来实现的一些公共逻辑`,
+刚好我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架也更新了一个功能: `通过非继承 Activity Fragment 来实现以前需要封装进 BaseActivity  BaseFragment 通过继承来实现的一些公共逻辑`
 
 
 ## 那我就来说说我怎么在不使用继承的情况下让 **Activty** 一行代码都不写就能实现 **Toolbar**
