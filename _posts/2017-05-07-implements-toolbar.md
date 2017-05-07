@@ -333,6 +333,72 @@ public class WEApplication extends BaseApplication{
 
 ```
 
+## 需要Activity初始化某些事,或者提供某些数据
+
+**BaseActivity** 有些时候需要,子 **Activity** 实现某些方法,或者提供某些数据,如需要子 **Activity**
+实现 **initView** 返回 **setContentView()** 中的布局 **ID** ,实现 **initData** 初始化一些数据,这样就可以不需要 **Activity** 再重写 **onCreate** ,达到规范的目的, 这样使用 **ActivityLifecycleCallbacks** 同样能做到,那我该怎么做呢?
+
+只需要 **Activity** 实现某个自定义接口
+
+```
+public interface IActivity {
+
+    int initView();
+
+    void initData();
+
+}
+
+```
+
+然后在 **ActivityLifecycleCallbacks** 的 **onActivityCreated** 中调用这些方法,就可以实现
+
+```
+public class WEApplication extends BaseApplication{
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+            if (activity instanceof IActivity) {
+               activity.setContentView(((IActivity)activity).initView());
+               ((IActivity)activity).initData();          
+            }
+              
+           }
+
+            ...
+       
+        }
+            
+        });
+    }
+}
+
+```
+
+# 注意事项
+
+由于 **ActivityLifecycleCallbacks** 中所有方法的调用时机都是在 **Activity** 对应生命周期的 **Super** 方法中进行的,所以在 **Activity** 的 **onCreate** 方法中使用 **setContentView** 必须在 **super.onCreate(savedInstanceState);** 之前,不然在 **onActivityCreated** 方法中 **findViewById** 会发现找不到
+
+```
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_home);
+        super.onCreate(savedInstanceState);
+    }
+
+
+```
+
+也可以结合上面的方式使用自定义接口,调用 **initView** 后,在 **findViewById()** 找到 **ToolBar**
+
+
+>  一不小心实现了这么多以前必须写到 BaseActivity 中通过继承才能达到的功能,发现没有 BaseActivity ,也并没有什么不舒服的地方,突然感觉自己好牛逼 🤒,赶快关注我吧,虽然我并不会经常更新博客,但是我更新的文章在质量上绝对有保证!
+
+
 # 总结
 
 以上提到的思想以及解决方案已经使用到了我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架中,想知道更详细的用法可以去看看我的框架实现,我上面提到的所有的实现,其实都是最简单的一些需求,相信已经颠覆了以前的实现方式了,而且更加优雅,更不用担心 **Java** 单继承的束缚
