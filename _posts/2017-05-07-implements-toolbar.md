@@ -18,7 +18,7 @@ image:
 > 通过非继承 Activity Fragment 来实现以前需要封装进 BaseActivity  BaseFragment 通过继承来实现的一些公共逻辑,以及监听整个 **App** 所有 **Activity** 以及 **Fragment** 的生命周期(包括三方库),并可向其生命周期内插入代码
 
 
-**那我就来说说我怎么在不使用继承的情况下让 **Activty** 一行代码都不写就能实现 Toolbar**
+*那我就来说说我怎么在不使用继承的情况下让 **Activty** 一行代码都不写就能实现 Toolbar*
 
 # 为什么我提倡少封装 BaseActvity 少用继承
 
@@ -415,12 +415,12 @@ public class WEApplication extends BaseApplication{
 
 ---
 
-**这里还要说一句,每个人的思路不一样,考虑的角度也不一样,你认同我也好, 不认同我也好,都不会影响我的脚步,至少我是在用我的思路创新,解决一些我认为有必要解决的问题,和上一篇的文章一样,我就是喜欢使用不一样的思路解决同样的问题,不管你是否觉得可行,我至少用这个你觉得不可行的思路实现了我想达到的效果,仁者见仁智者见智,如果我们思维没有碰撞,那也请珍惜我的劳动成果**
+*这里还要说一句,每个人的思路不一样,考虑的角度也不一样,你认同我也好, 不认同我也好,都不会影响我的脚步,至少我是在用我的思路创新,解决一些我认为有必要解决的问题,和上一篇的文章一样,我就是喜欢使用不一样的思路解决同样的问题,不管你是否觉得可行,我至少用这个你觉得不可行的思路实现了我想达到的效果,仁者见仁智者见智,如果我们思维没有碰撞,那也请珍惜我的劳动成果*
 
-**对于一些评论我再说一句, **registerActivityLifecycleCallbacks()** 内部是把 **ActivityLifecycleCallbacks** 加到一个集合中,所以 **ActivityLifecycleCallbacks** 可以添加多个,并且 **ActivityLifecycleCallbacks** 只是在项目初始化的时候被装到集合中,并不会初始化任何东西,和添加监听器一个道理,使用的是观察者模式,所以不要说 **Application** 代码这么多会怎么怎么样, `Okhttp` 的 **Interceptor** 的代码更多,也是在 `Okhttp` 初始化时被添加,你觉得会有什么影响吗?**
+*对于一些评论我再说一句, **registerActivityLifecycleCallbacks()** 内部是把 **ActivityLifecycleCallbacks** 加到一个集合中,所以 **ActivityLifecycleCallbacks** 可以添加多个,并且 **ActivityLifecycleCallbacks** 只是在项目初始化的时候被装到集合中,并不会初始化任何东西,和添加监听器一个道理,使用的是观察者模式,所以不要说 **Application** 代码这么多会怎么怎么样, `Okhttp` 的 **Interceptor** 的代码更多,也是在 `Okhttp` 初始化时被添加,你觉得会有什么影响吗?*
 
 ---
-**Hello 我叫Jessyan,如果您喜欢我的文章,可以在以下平台关注我 **
+**Hello 我叫Jessyan,如果您喜欢我的文章,可以在以下平台关注我**
 
 * GitHub:  <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
