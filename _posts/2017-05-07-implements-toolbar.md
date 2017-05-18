@@ -11,14 +11,16 @@ image:
 # 前言
 距离 [上篇文章](http://www.jianshu.com/p/ac51c9b88af3) 的发表时间已经过去两个多月了,这两个月时间里我没写文章但一直在更新着我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架,让他逐渐朝着 **可配置化集成框架** 发展
 
-就在前段时间我在`鸿洋公众号`上看到了一篇文章,大概是介绍怎么封装 **BaseActivity** ,让 **Activity** 通过几行代码就可以实现 **ToolBar** 
+就在前段时间我在 **鸿洋公众号** 上看到了一篇文章,大概是介绍怎么封装 **BaseActivity** ,让 **Activity** 通过几行代码就可以实现 **ToolBar** 
 
-刚好我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架也更新了一个功能: `通过非继承 Activity Fragment 来实现以前需要封装进 BaseActivity  BaseFragment 通过继承来实现的一些公共逻辑`
+刚好我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架也更新了一个功能: 
+
+> 通过非继承 Activity Fragment 来实现以前需要封装进 BaseActivity  BaseFragment 通过继承来实现的一些公共逻辑,以及监听整个 **App** 所有 **Activity** 以及 **Fragment** 的生命周期(包括三方库),并可向其生命周期内插入代码
 
 
-## 那我就来说说我怎么在不使用继承的情况下让 **Activty** 一行代码都不写就能实现 **Toolbar**
+**那我就来说说我怎么在不使用继承的情况下让 **Activty** 一行代码都不写就能实现 Toolbar**
 
-# 为什么我提倡少封装BaseActvity少用继承
+# 为什么我提倡少封装 BaseActvity 少用继承
 
 **BaseActivity** 封装多了,除了不好管理外,还有最重要的一点就是, `Java` 只能单继承,当如果你的 **Activity** 需要使用到某个三方库,那个三方库必须让你继承于它的 **Activity** 但是你又需要你自己封装的 **BaseActivity** 的某些特性,这时你怎么办? 你不能改三方库的 **Activity** 所以你只有改你的 **BaseActivity** 让它去继承三方库的 **Activity**,但是当改了 **BaseActivity** 后,发现有很多继承于 **BaseActivity** 的 **Activity** 并不需要这个三方库,却被迫继承了它的 **Activity** ,这时你又要重新封装一个 **BaseActivity** 
 
@@ -401,20 +403,24 @@ public class WEApplication extends BaseApplication{
 
 # 总结
 
+值得注意的是 **ActivityLifecycleCallbacks** 可以注册多个,可以针对不同情况添加各种 **ActivityLifecycleCallbacks** 按照需要进行组合从而达到不同的需求 ,和 `Okhttp` 的 **Interceptor** 类似
+ 
+现在整个 **App** 的所有 **Activity** 和 **Fragment** 只要生命周期调用都会被拦截,应用到我框架上就可以动态的向所有 **Activity** 和 **Fragment** 的对应生命周期插入任意代码,比如说 **LeakCanary** 的 **RefWatcher.watch(fragment)** 也可以直接插入到三方库的 **Fragment** 中,并且如果代码有任何改动也不用再去改基类,有点Aop的意思
+
 以上提到的思想以及解决方案已经使用到了我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架中,想知道更详细的用法可以去看看我的框架实现,我上面提到的所有的实现,其实都是最简单的一些需求,相信已经颠覆了以前的实现方式了,而且更加优雅(**因为我是站在三方库设计者的角度提出这个功能的,我必须将惟一继承的机会留给其他 Activity ,你如果相较于之前的方式觉得不够优雅,那就当我没说**),更不用担心 **Java** 单继承的束缚
 
 但是千万不要以为, **ActivityLifecycleCallbacks** 就只能实现这些简单的需求,它还可以用到更多更复杂的功能之上,还是我之前的话, **只要敢于尝试,你想象力有多丰富,这里就有多强大** ,思想以及解决方案已经介绍的很清楚了,至于更多需求的实现就靠大家去尝试咯,虽然我不敢保证以前封装 **BaseActivity** 通过继承实现的所有功能都能被 **ActivityLifecycleCallbacks** 所替代,但是我想大多数功能还是能实现的
 
 以前大家都是分享自己封装的 **BaseActivity** ,说不定有一天大家就开发分享自己写的 **ActivityLifecycleCallbacks** 呢! 当以前的方式已经不能满足我们的需求,敢于跳出传统的方式,尝试不同的解决方案,才能扩宽自己的视野,增长自己的技术, [MVPArms](https://github.com/JessYanCoding/MVPArms) 正在不断的努力着!
 
+---
 
+**这里还要说一句,每个人的思路不一样,考虑的角度也不一样,你认同我也好, 不认同我也好,都不会影响我的脚步,至少我是在用我的思路创新,解决一些我认为有必要解决的问题,和上一篇的文章一样,我就是喜欢使用不一样的思路解决同样的问题,不管你是否觉得可行,我至少用这个你觉得不可行的思路实现了我想达到的效果,仁者见仁智者见智,如果我们思维没有碰撞,那也请珍惜我的劳动成果**
 
-> 这里还要说一句,每个人的思路不一样,考虑的角度也不一样,你认同我也好, 不认同我也好,都不会影响我的脚步,至少我是在用我的思路创新,解决一些我认为有必要解决的问题,和上一篇的文章一样,我就是喜欢使用不一样的思路解决同样的问题,不管你是否觉得可行,我至少用这个你觉得不可行的思路实现了我想达到的效果,仁者见仁智者见智,如果我们思维没有碰撞,那也请珍惜我的劳动成果
-
-
+**对于一些评论我再说一句, **registerActivityLifecycleCallbacks()** 内部是把 **ActivityLifecycleCallbacks** 加到一个集合中,所以 **ActivityLifecycleCallbacks** 可以添加多个,并且 **ActivityLifecycleCallbacks** 只是在项目初始化的时候被装到集合中,并不会初始化任何东西,和添加监听器一个道理,使用的是观察者模式,所以不要说 **Application** 代码这么多会怎么怎么样, `Okhttp` 的 **Interceptor** 的代码更多,也是在 `Okhttp` 初始化时被添加,你觉得会有什么影响吗?**
 
 ---
-**Hello 我叫Jessyan,如果您喜欢我的文章,可以在以下平台关注我 😘**
+**Hello 我叫Jessyan,如果您喜欢我的文章,可以在以下平台关注我 **
 
 * GitHub:  <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
@@ -422,13 +428,3 @@ public class WEApplication extends BaseApplication{
 * 微博: <http://weibo.com/u/1786262517>
 
 -- The end
-
-
-
-
-
-
-
-
-
-
