@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  我一行代码都不写实现Toolbar!你却还在封装BaseActivity?
+title: 我一行代码都不写实现Toolbar!你却还在封装BaseActivity?
 tags: [ToolBar,Activity]
 modified: 2017-05-07
 image:
