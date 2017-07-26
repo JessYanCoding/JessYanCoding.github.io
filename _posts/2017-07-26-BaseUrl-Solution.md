@@ -13,6 +13,8 @@ Hello,我是 **JessYan**,作为一个喜欢探索新颖解决方案的我,在 [�
 
 > Github : [你的 Star 是我坚持的动力 ✊](https://github.com/JessYanCoding/RetrofitUrlManager)
 
+![gif](https://raw.githubusercontent.com/JessYanCoding/RetrofitUrlManager/master/art/overview.gif)
+
 # 需求出现的场景
 也许在日常开发中有些人已经遇到了这两个需求的场景,但为了让一些之前没遇到这些场景的朋友,也能看懂这篇文章,所以先在前面提一提
 
