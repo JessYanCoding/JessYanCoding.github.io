@@ -1,6 +1,6 @@
 ---
 layout: post
-title: !!!解决Retrofit多BaseUrl及运行时动态改变BaseUrl?
+title: 解决Retrofit多BaseUrl及运行时动态改变BaseUrl?
 tags: [Retrofit]
 modified: 2017-07-26
 image:
