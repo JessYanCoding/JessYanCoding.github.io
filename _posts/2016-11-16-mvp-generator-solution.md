@@ -15,7 +15,9 @@ image:
 
 ## 使用Template生成模版代码
 
-> 如果之前已经用过`Template`那你可以直接跳到最后,后面附送[`MVPArms`](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md)框架的**MVP**及**Dagger**相关类的模版,现在可以非常轻松使用[`MVPArms`](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md)框架,构建属于自己的**MVP**+**Dagger2**+**Retrofit**+**Rxjava**项目,你只用专注于逻辑,其他都交给[`MVPArms`](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md)
+> 注意!!!现在 Template 在这篇文章的基础上已完成升级,支持一键生成所有文件,并且高度可配置,详情请查看 [请一定记得 Star 感谢](https://github.com/JessYanCoding/MVPArmsTemplate)
+
+> 如果之前已经用过`Template`那你可以直接跳到最后,后面附送[MVPArms](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md)框架的**MVP**及**Dagger**相关类的模版,现在可以非常轻松使用[MVPArms](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md)框架,构建属于自己的**MVP**+**Dagger2**+**Retrofit**+**Rxjava**项目,你只用专注于逻辑,其他都交给[MVPArms](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md)
 
 1.添加模版
 
@@ -26,8 +28,7 @@ image:
 ![](https://github.com/JessYanCoding/MVPArms/raw/master/image/step_2.png)
 
 
-## 注意事项
-
+##注意事项
 * 至于本框架一个页面要生成哪些文件,请以**Demo**中**mvp**包下的UserActivity为例子,再参照以下注意事项
 
 * 通过Template生成对应页面的MVP和Dagger代码,请注意输入框中输入的名字必须相同
@@ -47,3 +48,9 @@ image:
 ## Where
 
 > [模版规则在项目根目录的`MVP_generator_solution`文件中](https://github.com/JessYanCoding/MVPArms/blob/master/MVP_generator_solution)
+
+---
+**Hello 我叫Jessyan,如果您喜欢我的文章,可以在以下平台关注我😘**
+* GitHub:  <https://github.com/JessYanCoding>
+* 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
+* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
