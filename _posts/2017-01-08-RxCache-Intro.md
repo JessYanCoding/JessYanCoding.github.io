@@ -7,7 +7,7 @@ image:
   feature: abstract-8.jpg
 ---
 
-**推荐**：看到如此多的**MVP**+**Dagger2**+**Retrofit**+**Rxjava**项目,轻松拿**star**,心动了吗？[`MVPArms`](https://github.com/JessYanCoding/MVPArms/wiki)是一个 **MVP**+**Dagger2**+**Retrofit**+**Rxjava**快速集成框架(目前Dagger应用最复杂的框架),自带上万字[文档](https://github.com/JessYanCoding/MVPArms/wiki)以及自动生成**MVP**和**Dagger2**文件等功能,你只用专注于逻辑,其他都交给[`MVPArms`](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md),快来构建自己的**MVP**+**Dagger2**+**Retrofit**+**Rxjava**项目吧!|
+**推荐**：看到如此多的 **MVP**+**Dagger2**+**Retrofit**+**Rxjava** 项目, 轻松拿 **star**, 心动了吗? 看到身边的朋友都已早早在项目中使用这些技术, 而你还不会, 失落吗? <br>[MVPArms](https://github.com/JessYanCoding/MVPArms/wiki) 是一个  **MVP**+**Dagger2**+**Retrofit**+**Rxjava** 可配置化快速集成框架(目前 Dagger 应用最复杂可配置化极强的集成框架), 自带上万字 [文档](https://github.com/JessYanCoding/MVPArms/wiki) 以及 [一键生成](https://github.com/JessYanCoding/MVPArmsTemplate)  **MVP** 和 **Dagger2** 文件等功能, 成熟稳定且已有上千个商业项目接入, 累计 5k+ star([全球第一 MVP 框架](https://github.com/topics/mvp?l=java)), 现在你只用专注于逻辑, 其他都交给 [MVPArms](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md), 快来构建自己的 **MVP**+**Dagger2**+**Retrofit**+**Rxjava** 项目吧!|
 :----------:|
 
 

@@ -55,7 +55,7 @@ image:
 
 <a name="0"></a>
 # 0 前言
-[**MVPArms**](https://github.com/JessYanCoding/MVPArms) 从两年前开源至今, 已经累积了近 **5k star**, 获得了上千个商业项目的信赖和认可
+[**MVPArms**](https://github.com/JessYanCoding/MVPArms) 从两年前开源至今, 已经累积了 **5k star**, 获得了上千个商业项目的信赖和认可
 
 回顾两年前, 那时 **MVPArms** 还没诞生, **MVP**、**Dagger2**、**Rxjava**、**Retrofit** 这些技术在国内才刚刚开始流行, 在网上能搜索到的中文学习资料远没有现在这么丰富, 特别是 **Dagger**, 在网上能搜索到的文章甚至有很多讲的是 **Square** 的 **Dagger1**, 学习资料的匮乏加上 **Dagger2** 本身就是块硬骨头, 让本人在学习的道路上不知道多走了多少弯路
 
