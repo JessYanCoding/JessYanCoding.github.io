@@ -95,6 +95,8 @@ image:
 
 <a name="0.3"></a>
 ## 0.3 ArmsComponent 的优势
+**ArmsComponent** 拥有一键自动生成组件功能, [可以一键搭建整体组件架构, 让您体验纯傻瓜式的组件化开发](https://github.com/JessYanCoding/ArmsComponent-Template), 虽然一键搭建功能让新手也可以一秒开始组件化项目, 但本方案还是提供有上万字的详细文档让您可以更深入的了解本方案, 并且 **JessYan** 郑重承诺, **ArmsComponent** 将和 **MVPArms** 一起持续维护下去, **ArmsComponent** 绝对是一个真正用心对待的组件化方案
+
 **MVPArms** 是一个开源两年, 成熟稳定, 涵盖大量主流技术且兼容组件化的基础库,  **MVPArms** 使得 **ArmsComponent** 成为了唯一提供完整基础库的组件化方案, 这就是 **ArmsComponent** 相对于其他组件化方案最大的优势
 
 因为有了 **基础库** 的存在, 再加上已有的 **路由框架**, 组件化中的三个大点就已经占有两个(**业务组件的划分和代码隔离** 在后面会有介绍), 因此使用 **ArmsComponent** 启动一个新项目, 即可快速进行组件化, 将 **Demo** (组件化项目雏形) 克隆下来后, 稍作修改, 马上就可以投入到业务的开发之中
