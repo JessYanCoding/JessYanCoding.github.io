@@ -6,6 +6,7 @@ modified: 2016-09-07
 image:
   feature: abstract-5.jpg
 ---
+![Logo](https://raw.githubusercontent.com/JessYanCoding/MVPArms/master/image/arms_banner_v1.0.jpg)
 
 # 前言
 
@@ -25,27 +26,40 @@ image:
 ## Notice
 * 沟通交流群: [ ![QQGroup](https://img.shields.io/badge/QQ群-301733278-ff69b4.svg) ](https://shang.qq.com/wpa/qunwpa?idkey=1a5dc5e9b2e40a780522f46877ba243eeb64405d42398643d544d3eec6624917)
 
-* [一键生成 MVP , Dagger2 相关类(**开发神器,不看后悔!**)](https://github.com/JessYanCoding/MVPArmsTemplate)
+* 一键生成模板, 开发神器, 不看后悔! (MVPArms 的所有规范现已整合到以下两种模板中, 让您无需理解 Wiki 文档便可快速开启 MVPArms 的世界)
+  * [一键生成 app Module (使用此 **Module 级** 模板可直接生成 **Wiki** 文档第一章 **开发准备** 的所有内容, 快速并且零错误)](https://github.com/JessYanCoding/MVPArms-Module-Template)
+  * [一键生成 MVP, Dagger2 相关类 (使用此 **页面级** 模板可直接生成 **Wiki** 文档第二章 **快速开始** 的所有内容, 快速并且零错误)](https://github.com/JessYanCoding/MVPArmsTemplate)
 * [MVPArms 学习项目](https://github.com/JessYanCoding/MVPArms/blob/master/CONTRIBUTING_APP.md)
 * [更新日志](https://github.com/JessYanCoding/MVPArms/wiki/UpdateLog)
-* [常见 Issues](https://github.com/JessYanCoding/MVPArms/wiki/Issues)
+* [常见 Issues (**开发必看, 节约您的时间!**)](https://github.com/JessYanCoding/MVPArms/wiki/Issues)
 * [意见收集](https://github.com/JessYanCoding/MVPArms/issues/40)
-* [一行代码监听 App 中所有网络链接的上传以及下载进度,以及 Glide 加载进度](https://github.com/JessYanCoding/ProgressManager)
+
+> 扩展项目, 了解一下:
+* [**MVPArms 官方组件化方案 ArmsComponent**](https://github.com/JessYanCoding/ArmsComponent/wiki)
+
+* [改造 Android 官方架构组件 ViewModel](https://github.com/JessYanCoding/LifecycleModel)
+* [一行代码监听 App 中所有网络链接的上传以及下载进度, 以及 Glide 加载进度](https://github.com/JessYanCoding/ProgressManager)
 * [以最简洁的 Api 让 Retrofit 同时支持多个 BaseUrl 以及动态改变 BaseUrl](https://github.com/JessYanCoding/RetrofitUrlManager)
 
 ## Feature
-* 通用框架,适合所有类型的项目,支持大型项目的开发,兼容组件化开发,可作为组件化的 **Base** 库
+* 通用框架, 适合所有类型的项目, 支持大型项目的开发, 兼容组件化开发, 可作为组件化的 **Base** 库
 
-* 框架高度可自定义化,可在不修改框架源码的情况下对 **Retoift** , **Okhttp** , **RxCache** , **Gson** 等框架的特有属性进行自定义化配置,可在不修改框架源码的情况下向 **BaseApplication** , **BaseActivity** , **BaseFragment** 的对应生命周期中插入代码
-* 全局使用 **Dagger2** 管理,独创的建造者模式 **Module** ,可实现使用 **Dagger2** 向框架任意位置注入自定义参数(将所有模块使用
- **Dagger2** 连接起来,绝不是简单的使用)
-* 全局监听整个 **App** 所有 **Activity** 以及 **Fragment** 的生命周期(包括三方库),并可向其生命周期内插入代码
-* 全局监听 **Http Request**(请求参数, **Headers** ...), **Response** (服务器返回的结果, **Headers** ,耗时 ...)等信息(包括 **Glide** 的请求),可解析 json 后根据状态码做相应的全局操作以及数据加密, **Cookie** 管理等操作
-* 全局管理所有 **Activity** (包括三方库的 **Activity**),可实现在整个 **App** 任意位置,退出所有 **Activity** ,以及拿到前台 **Activity** 做相应的操作(如你可以在 **App** 任何位置做弹出 **Dialog** 的操作)
-* 全局 **Rxjava** 错误处理,错误后自动重试,捕捉整个应用的所有错误
+* **Base** 基类(**BaseActivity**, **BaseFragment**, **BaseApplication** ...)
+* **MVP** 基类(**IModel**, **IVIew**, **IPresenter** ...)
+* 框架高度可自定义化 (**ConfigModule**), 可在不修改框架源码的情况下对 **Retoift**, **Okhttp**, **RxCache**, **Gson** 等框架的特有属性进行自定义化配置, 可在不修改框架源码的情况下向 **BaseApplication**, **BaseActivity**, **BaseFragment** 的对应生命周期中插入任意代码, 并且框架独有的 **ConfigModule** 配置类, 可在不修改框架源码的情况下为框架轻松扩展任何新增功能
+* 独创的 **RxLifeCycle** 应用方式, 可在不继承 **RxLifeCycle** 提供的 **Activity** 和 **Fragment** 的情况下, 正常使用 **RxLifeCycle** 的所有功能, 且使用方式不变
+* 独创的建造者模式 **Module** (**GlobalConfigModule**), 可实现使用 **Dagger2** 向框架任意位置注入自定义参数, 可轻松扩展任意自定义参数
+* 全局使用 **Dagger2** 管理 (将所有模块使用 **Dagger2** 连接起来, 绝不是简单的使用)
+* 全局监听整个 **App** 所有 **Activity** 以及 **Fragment** 的生命周期 (包括三方库), 并可向其生命周期内插入任意代码
+* 全局监听 **Http Request**(请求参数, **Headers** ...), **Response** (服务器返回的结果, **Headers**, 耗时 ...)等信息(包括 **Glide** 的请求), 可解析 json 后根据状态码做相应的全局操作以及数据加密, **Cookie** 管理等操作
+* 全局管理所有 **Activity** (包括三方库的 **Activity**), 可实现在整个 **App** 任意位置, 退出所有 **Activity**, 以及拿到前台 **Activity** 做相应的操作(如您可以在 **App** 任何位置做弹出 **Dialog** 的操作)
+* 全局 **Rxjava** 错误处理, 错误后自动重试, 捕捉整个应用的所有错误
 * 全局 **UI** 自适应
-* 图片加载类 **ImageLoader** 使用策略模式和建造者模式,轻松切换图片加载框架,方便功能扩展
-* 修改包名后就可以直接使用,快速接入(老项目接入请按下面的步骤)
+* 图片加载类 **ImageLoader** 使用策略模式和建造者模式, 轻松切换图片加载框架, 方便功能扩展
+* 网络请求日志打印封装(提供解析后的服务器的请求信息和服务器的响应信息, 按可自定义的任意格式输出打印日志, 内置一个漂亮的打印格式模板)
+* 框架内自有组件的缓存机制封装(框架内可缓存内容的组件都提供有接口供外部开发者自定义缓存机制)
+* 代码生成插件(**MVPArms** 全家桶一键生成所需要的所有类文件)
+* **Demo** 修改包名后就可以直接使用, 快速接入(老项目接入请按下面的步骤)
 
 # Where?
 
