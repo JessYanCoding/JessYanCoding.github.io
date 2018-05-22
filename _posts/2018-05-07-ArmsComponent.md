@@ -4,9 +4,10 @@ title: MVPArms官方快速组件化方案开源,来自5K star的信赖
 tags: [Architecture]
 modified: 2018-05-07
 image:
-  feature: https://raw.githubusercontent.com/JessYanCoding/ArmsComponent/master/arts/arms_component_banner_v1.0.jpg
+  feature: abstract-1.jpg
 ---
 
+![Logo](https://raw.githubusercontent.com/JessYanCoding/ArmsComponent/master/arts/arms_component_banner_v1.0.jpg)
 
 - 0 [前言](#0)
    - 0.1 [起源](#0.1)
