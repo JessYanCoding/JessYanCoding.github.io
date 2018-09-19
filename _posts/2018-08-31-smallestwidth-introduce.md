@@ -13,11 +13,11 @@ image:
 * [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
 
 # 前言
-**ok**，根据上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](https://www.jianshu.com/p/55e0fca23b4f) 的承诺，本文是这个系列的第二篇文章，这篇文章会详细讲解 **smallestWidth 限定符屏幕适配方案**
+**ok**，根据上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](http://jessyan.me/autosize-introduce/) 的承诺，本文是这个系列的第二篇文章，这篇文章会详细讲解 **smallestWidth 限定符屏幕适配方案**
 
 了解我的朋友一定知道，[MVPArms](https://github.com/JessYanCoding/MVPArms) 一直使用的是 **鸿神** 的 **AndroidAutoLayout** 屏幕适配方案，得益于 **AndroidAutoLayout** 的便捷，所以我对屏幕适配领域研究的不是很多，**AndroidAutoLayout** 停止维护后，我也一直在找寻着替代方案，直到 **今日头条屏幕适配方案** 刷屏，后来又无意间看到了 **smallestWidth 限定符屏幕适配方案**，这才慢慢的将研究方向转向了屏幕适配领域
 
-最近一个月才开始慢慢恶补 **Android** 屏幕适配的相关知识，对这两个方案也进行了更深入的研究，可以说从一个小白慢慢成长而来，所以我明白小白的痛，因此在上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](https://www.jianshu.com/p/55e0fca23b4f) 中，把 **今日头条屏幕适配方案** 讲得非常的细，尽量把每一个知识点都描述清晰，深怕小白漏掉每一个细节，这篇文章我也会延续上一篇文章的优良传统，将 **smallestWidth 限定符屏幕适配方案** 的每一个知识点都描述清晰
+最近一个月才开始慢慢恶补 **Android** 屏幕适配的相关知识，对这两个方案也进行了更深入的研究，可以说从一个小白慢慢成长而来，所以我明白小白的痛，因此在上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](http://jessyan.me/autosize-introduce/) 中，把 **今日头条屏幕适配方案** 讲得非常的细，尽量把每一个知识点都描述清晰，深怕小白漏掉每一个细节，这篇文章我也会延续上一篇文章的优良传统，将 **smallestWidth 限定符屏幕适配方案** 的每一个知识点都描述清晰
 
 顺便说一句，感谢大家对 [AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md) 的支持，我只是在上一篇文章中提了一嘴我刚发布的屏幕适配框架 [AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md)，还没给出详细的介绍和原理剖析 (原计划在本系列的第三篇文章中发布)，[AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md) 就被大家推上了 [Github Trending](https://github.com/trending/java?since=daily)，一个多星期就拿了 **2k+ stars**，随着关注度的增加，我在这段时间里也累坏了，**issues** 就没断过，不到半个月就提交了 **200** 多次 **commit**，但累并快乐着，在这里要再次感谢大家对 [AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md) 的认可
 
