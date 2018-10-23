@@ -11,6 +11,7 @@ image:
 
 * [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
 * [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
 
 # 前言
 **ok**，根据上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](http://jessyan.me/autosize-introduce/) 的承诺，本文是这个系列的第二篇文章，这篇文章会详细讲解 **smallestWidth 限定符屏幕适配方案**
@@ -348,6 +349,7 @@ ok，还是按照上一篇文章的叙述方式，现在来举栗说明，帮助
 
 * [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
 * [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
 
 ---
 **Hello 我叫 JessYan，如果您喜欢我的文章，可以在以下平台关注我**
