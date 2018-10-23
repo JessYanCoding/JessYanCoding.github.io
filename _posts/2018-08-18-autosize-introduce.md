@@ -11,6 +11,7 @@ image:
 
 * [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
 * [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
 
 # 前言
 这个月在 **Android** 技术圈中 **屏幕适配** 这个词曝光率挺高的，为什么这么说呢？因为这个月陆续有多个大佬发布了屏幕适配相关的文章，公布了自己认可的屏幕适配方案
@@ -271,6 +272,7 @@ public static float applyDimension(int unit, float value,
 
 * [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
 * [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
 
 
 ---
