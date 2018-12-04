@@ -24,7 +24,7 @@ image:
 * 对于一个新的**Android**项目,特别是熟练使用**Dagger2**和**Rxjava**的开发者,你们只需要将此项目**Clone**下来,**Demo**只实现了一个页面,将此页面删除掉,添加所需要的**Retrofit** **API**,你的框架就搭建好了,你就可以直接使用**Demo**进行后续的开发,包结构也适合后面的扩展.
 
 ## Notice
-* 沟通交流群: [ ![QQGroup](https://img.shields.io/badge/QQ群-301733278-ff69b4.svg) ](https://shang.qq.com/wpa/qunwpa?idkey=1a5dc5e9b2e40a780522f46877ba243eeb64405d42398643d544d3eec6624917)
+* 沟通交流群: [QQ群 455850365 | 301733278](https://shang.qq.com/wpa/qunwpa?idkey=7e59e59145e6c7c68932ace10f52790636451f01d1ecadb6a652b1df234df753)
 
 * 一键生成模板, 开发神器, 不看后悔! (MVPArms 的所有规范现已整合到以下两种模板中, 让您无需理解 Wiki 文档便可快速开启 MVPArms 的世界)
   * [一键生成 app Module (使用此 **Module 级** 模板可直接生成 **Wiki** 文档第一章 **开发准备** 的所有内容, 快速并且零错误)](https://github.com/JessYanCoding/MVPArms-Module-Template)
@@ -37,6 +37,7 @@ image:
 > 扩展项目, 了解一下:
 * [**MVPArms 官方组件化方案 ArmsComponent**](https://github.com/JessYanCoding/ArmsComponent/wiki)
 
+* [今日头条屏幕适配方案终极版，一个极低成本的 Android 屏幕适配方案](https://github.com/JessYanCoding/AndroidAutoSize)
 * [改造 Android 官方架构组件 ViewModel](https://github.com/JessYanCoding/LifecycleModel)
 * [一行代码监听 App 中所有网络链接的上传以及下载进度, 以及 Glide 加载进度](https://github.com/JessYanCoding/ProgressManager)
 * [以最简洁的 Api 让 Retrofit 同时支持多个 BaseUrl 以及动态改变 BaseUrl](https://github.com/JessYanCoding/RetrofitUrlManager)
@@ -59,7 +60,7 @@ image:
 * 网络请求日志打印封装(提供解析后的服务器的请求信息和服务器的响应信息, 按可自定义的任意格式输出打印日志, 内置一个漂亮的打印格式模板)
 * 框架内自有组件的缓存机制封装(框架内可缓存内容的组件都提供有接口供外部开发者自定义缓存机制)
 * 代码生成插件(**MVPArms** 全家桶一键生成所需要的所有类文件)
-* **Demo** 修改包名后就可以直接使用, 快速接入(老项目接入请按下面的步骤)
+* **Demo** 修改包名后就可以直接使用, 快速接入
 
 # Where?
 
@@ -67,11 +68,13 @@ image:
 
 # Architectural
 
-![](https://github.com/JessYanCoding/MVPArms/raw/master/image/Architecture.png)
+![Architecture](http://upload-images.jianshu.io/upload_images/2974769-9036b892e4e4eee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # Package Structure
 
-![](https://github.com/JessYanCoding/MVPArms/raw/master/image/package.png)
+![package](
+http://upload-images.jianshu.io/upload_images/2974769-651964f23e93843c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
+
 
 # How?
 
@@ -176,26 +179,29 @@ public class UserPresenter extends BasePresenter<UserContract.Model, UserContrac
 > 感谢本框架所使用到的所有三方库的**Author**,以及所有为`Open Sourece`做无私贡献的**Developer**和**Organizations**,使我们能更好的工作和学习,本人也会将业余时间回报给开源社区
 
 
-1. [`Mvp`Google官方出品的`Mvp`架构项目，含有多个不同的架构分支(此为Dagger分支).](https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/)
-2. [`Dagger2`Google根据Square的Dagger1出品的依赖注入框架，通过Apt编译时生成代码，性能优于使用运行时反射技术的依赖注入框架.](https://github.com/google/dagger)
-3. [`Rxjava`提供优雅的响应式Api解决异步请求以及事件处理.](https://github.com/ReactiveX/RxJava)
-4. [`RxAndroid`为Android提供响应式Api.](https://github.com/ReactiveX/RxAndroid)
-5. [`Rxlifecycle`在Android上使用rxjava都知道的一个坑，就是生命周期的解除订阅，这个框架通过绑定activity和fragment的生命周期完美解决.](https://github.com/trello/RxLifecycle)
-6. [`RxCache`是使用注解为Retrofit加入二级缓存(内存,磁盘)的缓存库.](https://github.com/VictorAlbertos/RxCache)
-7. [`RxErroHandler` 是 `Rxjava` 的错误处理库,可在出现错误后重试.](https://github.com/JessYanCoding/RxErrorHandler)
-8. [`RxPermissions`用于处理Android运行时权限的响应式库.](https://github.com/tbruyelle/RxPermissions)
-9. [`Retrofit`Square出品的网络请求库，极大的减少了http请求的代码和步骤.](https://github.com/square/retrofit)
-10. [`Okhttp`同样Square出品，不多介绍，做Android都应该知道.](https://github.com/square/okhttp)
-11. [`Autolayout`鸿洋大神的Android全尺寸适配框架.](https://github.com/hongyangAndroid/AndroidAutoLayout)
-12. [`Gson`Google官方的Json Convert框架.](https://github.com/google/gson)
-13. [`Butterknife`JakeWharton大神出品的view注入框架.](https://github.com/JakeWharton/butterknife)
-14. [`Androideventbus`一个轻量级使用注解的Eventbus.](https://github.com/hehonghui/AndroidEventBus)
-15. [`Timber`JakeWharton大神出品Log框架容器，内部代码极少，但是思想非常不错.](https://github.com/JakeWharton/timber)
-16. [`Glide`此库为本框架默认封装图片加载库，可参照着例子更改为其他的库，Api和`Picasso`差不多,缓存机制比`Picasso`复杂,速度快，适合处理大型图片流，支持gfit，`Fresco`太大了！，在5.0以下优势很大，5.0以上系统默认使用的内存管理和`Fresco`类似.](https://github.com/bumptech/glide)
-17. [`LeakCanary`Square出品的专门用来检测`Android`和`Java`的内存泄漏,通过通知栏提示内存泄漏信息.](https://github.com/square/leakcanary)
+1. [`Mvp` 是 Google 官方出品的 `Mvp` 架构项目，含有多个不同的架构分支(此为 Dagger 分支).](https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/)
+2. [`Dagger2` 是 Google 根据 Square 的 Dagger1 出品的依赖注入框架，通过 Apt 编译时生成代码，性能优于使用运行时反射技术的依赖注入框架.](https://github.com/google/dagger)
+3. [`RxJava` 提供优雅的响应式 API 解决异步请求以及事件处理.](https://github.com/ReactiveX/RxJava)
+4. [`RxAndroid` 为 Android 提供响应式 API.](https://github.com/ReactiveX/RxAndroid)
+5. [`Rxlifecycle`，在 Android 上使用 `RxJava` 都知道的一个坑，就是生命周期的解除订阅，这个框架通过绑定 Activity 和 Fragment 的生命周期完美解决该问题.](https://github.com/trello/RxLifecycle)
+6. [`RxCache` 是使用注解，为 `Retrofit` 加入二级缓存 (内存，磁盘) 的缓存库.](https://github.com/VictorAlbertos/RxCache)
+7. [`RxErroHandler` 是 `RxJava` 的错误处理库，可在出现错误后重试.](https://github.com/JessYanCoding/RxErrorHandler)
+8. [`RxPermissions` 用于处理 Android 运行时权限的响应式库.](https://github.com/tbruyelle/RxPermissions)
+9. [`Retrofit` 是 Square 出品的网络请求库，极大的减少了 Http 请求的代码和步骤.](https://github.com/square/retrofit)
+10. [`Okhttp` 同样 Square 出品，不多介绍，做 Android 的都应该知道.](https://github.com/square/okhttp)
+11. [`AndroidAutoSize` 是今日头条屏幕适配方案终极版，一个极低成本的 Android 屏幕适配方案，该库没有引入到 `Arms`，所以框架使用者可自由选择屏幕适配方案.](https://github.com/JessYanCoding/AndroidAutoSize)
+12. [`Gson` 是 Google 官方的 Json Convert 框架.](https://github.com/google/gson)
+13. [`Butterknife` 是 JakeWharton 大神出品的 View 注入框架.](https://github.com/JakeWharton/butterknife)
+14. [`AndroidEventBus` 是一个轻量级的 EventBus，该库没有引入到 `Arms`，所以框架使用者可自由选择 EventBus.](https://github.com/hehonghui/AndroidEventBus)
+15. [`Timber` 是 JakeWharton 大神出品的 Log 框架容器，内部代码极少，但是思想非常不错.](https://github.com/JakeWharton/timber)
+16. [`Glide` 是本框架默认封装到扩展库 `arms-imageloader-glide` 中的图片加载库，可参照着 Wiki 更改为其他的图片加载库，`Glide` 的 API 和 `Picasso` 差不多，缓存机制比 `Picasso` 复杂，速度快，适合处理大型图片流，支持 gif 图片，`Fresco` 太大了！在 5.0 以下优势很大，5.0 以上系统默认使用的内存管理和 `Fresco` 类似.](https://github.com/bumptech/glide)
+17. [`LeakCanary` 是 Square 出品的专门用来检测 `Android` 和 `Java` 的内存泄漏，并通过通知栏提示内存泄漏信息.](https://github.com/square/leakcanary)
 
 ---
-**Hello 我叫Jessyan,如果您喜欢我的文章,可以在以下平台关注我😘**
-* GitHub:  <https://github.com/JessYanCoding>
+**Hello 我叫 JessYan，如果您喜欢我的文章，可以在以下平台关注我**
+
+* 个人主页: <http://jessyan.me>
+* GitHub: <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
 * 简书: <http://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <http://weibo.com/u/1786262517>
