@@ -24,7 +24,7 @@ image:
 * 对于一个新的**Android**项目,特别是熟练使用**Dagger2**和**Rxjava**的开发者,你们只需要将此项目**Clone**下来,**Demo**只实现了一个页面,将此页面删除掉,添加所需要的**Retrofit** **API**,你的框架就搭建好了,你就可以直接使用**Demo**进行后续的开发,包结构也适合后面的扩展.
 
 ## Notice
-* 沟通交流群: [QQ群 455850365 | 301733278](https://shang.qq.com/wpa/qunwpa?idkey=7e59e59145e6c7c68932ace10f52790636451f01d1ecadb6a652b1df234df753)
+* 沟通交流群: [ ![QQ-Group](https://img.shields.io/badge/QQ%E7%BE%A4-455850365%20%7C%20301733278-orange.svg?style=flat-square) ](https://shang.qq.com/wpa/qunwpa?idkey=7e59e59145e6c7c68932ace10f52790636451f01d1ecadb6a652b1df234df753)
 
 * 一键生成模板, 开发神器, 不看后悔! (MVPArms 的所有规范现已整合到以下两种模板中, 让您无需理解 Wiki 文档便可快速开启 MVPArms 的世界)
   * [一键生成 app Module (使用此 **Module 级** 模板可直接生成 **Wiki** 文档第一章 **开发准备** 的所有内容, 快速并且零错误)](https://github.com/JessYanCoding/MVPArms-Module-Template)
