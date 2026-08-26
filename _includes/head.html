@@ -27,8 +27,14 @@
 {%- endif %}
 <meta name="twitter:card" content="summary">
 
-<!-- 关键资源用根相对路径：不依赖域名，本地预览 / 自定义域 / *.github.io 都能取到 -->
-<link rel="stylesheet" href="/assets/css/main.css">
+{%- comment -%}
+  样式内联，不走第二个请求。
+  实测现象是：HTML 到得了，样式表到不了（HTTP 正常、HTTPS 裸奔；Chrome 正常、
+  Safari 裸奔）。只要 CSS 是独立请求，就存在它单独失败而 HTML 已经渲染的可能。
+  内联之后 HTML 到了样式就一定在，这一类故障被整体消除。
+  /assets/css/main.css 仍然产出同一份内容，供旧的缓存 HTML 兜底。
+{%- endcomment -%}
+<style>{% include main.css %}</style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/images/avatar.jpg">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">

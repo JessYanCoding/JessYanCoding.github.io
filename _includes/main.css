@@ -1,6 +1,3 @@
----
-sitemap: false
----
 
 /* ==========================================================================
    JessYan's Home — design tokens
@@ -44,6 +41,17 @@ sitemap: false
   --code-bg:     #f7f7f5;
   --selection:   #cbeee7;
   --shadow: 0 1px 2px rgba(20, 20, 18, 0.04), 0 4px 12px rgba(20, 20, 18, 0.04);
+  /* 语法高亮 */
+  --syn-keyword: #b45bd8;
+  --syn-string:  #2f9e44;
+  --syn-number:  #d9730d;
+  --syn-attr:    #d9730d;
+  --syn-builtin: #0a7ea4;
+  --syn-class:   #c2820b;
+  --syn-func:    #1971c2;
+  --syn-err:     #d1383d;
+  --syn-add:     #2f9e44;
+  --syn-del:     #d1383d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,6 +71,17 @@ sitemap: false
     --code-bg:     #141716;
     --selection:   #1d4a43;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 14px rgba(0, 0, 0, 0.25);
+    /* 语法高亮 */
+    --syn-keyword: #d4a3f0;
+    --syn-string:  #8ce99a;
+    --syn-number:  #ffa94d;
+    --syn-attr:    #ffc078;
+    --syn-builtin: #66d9ef;
+    --syn-class:   #ffd43b;
+    --syn-func:    #74c0fc;
+    --syn-err:     #ff8787;
+    --syn-add:     #8ce99a;
+    --syn-del:     #ff8787;
   }
 }
 
@@ -82,6 +101,17 @@ sitemap: false
   --code-bg:     #141716;
   --selection:   #1d4a43;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 14px rgba(0, 0, 0, 0.25);
+  /* 语法高亮 */
+  --syn-keyword: #d4a3f0;
+  --syn-string:  #8ce99a;
+  --syn-number:  #ffa94d;
+  --syn-attr:    #ffc078;
+  --syn-builtin: #66d9ef;
+  --syn-class:   #ffd43b;
+  --syn-func:    #74c0fc;
+  --syn-err:     #ff8787;
+  --syn-add:     #8ce99a;
+  --syn-del:     #ff8787;
 }
 
 /* ==========================================================================
@@ -816,55 +846,22 @@ main { flex: 1 0 auto; }
 .notice__text { color: var(--text-soft); margin-top: 0.5rem; }
 
 /* ==========================================================================
-   Rouge 语法高亮
+   Rouge 语法高亮 —— 颜色走 token，规则只写一遍
    ========================================================================== */
 
 .highlight .c, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cd { color: var(--text-faint); font-style: italic; }
-.highlight .err { color: #d1383d; }
-.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv { color: #b45bd8; }
-.highlight .o, .highlight .ow { color: var(--text-soft); }
-.highlight .p, .highlight .pi { color: var(--text-soft); }
-.highlight .gd { color: #d1383d; }
-.highlight .gi { color: #2f9e44; }
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv { color: var(--syn-keyword); }
+.highlight .nl, .highlight .nt { color: var(--syn-keyword); }
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1, .highlight .ss, .highlight .sr, .highlight .dl { color: var(--syn-string); }
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: var(--syn-number); }
+.highlight .na { color: var(--syn-attr); }
+.highlight .nb, .highlight .bp, .highlight .no, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: var(--syn-builtin); }
+.highlight .nc, .highlight .nn { color: var(--syn-class); }
+.highlight .nd, .highlight .ni, .highlight .ne, .highlight .nf, .highlight .fm { color: var(--syn-func); }
+.highlight .o, .highlight .ow, .highlight .p, .highlight .pi { color: var(--text-soft); }
+.highlight .w { color: var(--text-faint); }
+.highlight .err { color: var(--syn-err); }
+.highlight .gi { color: var(--syn-add); }
+.highlight .gd { color: var(--syn-del); }
 .highlight .ge { font-style: italic; }
 .highlight .gs { font-weight: bold; }
-.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: #d9730d; }
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1, .highlight .ss, .highlight .sr, .highlight .dl { color: #2f9e44; }
-.highlight .na { color: #d9730d; }
-.highlight .nb, .highlight .bp { color: #0a7ea4; }
-.highlight .nc, .highlight .nn { color: #c2820b; }
-.highlight .no { color: #0a7ea4; }
-.highlight .nd, .highlight .ni, .highlight .ne, .highlight .nf, .highlight .fm { color: #1971c2; }
-.highlight .nl, .highlight .nt { color: #b45bd8; }
-.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: #0a7ea4; }
-.highlight .w { color: var(--text-faint); }
-
-:root[data-theme="dark"] {
-  .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv { color: #d4a3f0; }
-  .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: #ffa94d; }
-  .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1, .highlight .ss, .highlight .sr, .highlight .dl { color: #8ce99a; }
-  .highlight .na { color: #ffc078; }
-  .highlight .nb, .highlight .bp, .highlight .no, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: #66d9ef; }
-  .highlight .nc, .highlight .nn { color: #ffd43b; }
-  .highlight .nd, .highlight .ni, .highlight .ne, .highlight .nf, .highlight .fm { color: #74c0fc; }
-  .highlight .nl, .highlight .nt { color: #d4a3f0; }
-  .highlight .err { color: #ff8787; }
-  .highlight .gd { color: #ff8787; }
-  .highlight .gi { color: #8ce99a; }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv { color: #d4a3f0; }
-    .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: #ffa94d; }
-    .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1, .highlight .ss, .highlight .sr, .highlight .dl { color: #8ce99a; }
-    .highlight .na { color: #ffc078; }
-    .highlight .nb, .highlight .bp, .highlight .no, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: #66d9ef; }
-    .highlight .nc, .highlight .nn { color: #ffd43b; }
-    .highlight .nd, .highlight .ni, .highlight .ne, .highlight .nf, .highlight .fm { color: #74c0fc; }
-    .highlight .nl, .highlight .nt { color: #d4a3f0; }
-    .highlight .err { color: #ff8787; }
-    .highlight .gd { color: #ff8787; }
-    .highlight .gi { color: #8ce99a; }
-  }
-}
