@@ -1,1 +1,10 @@
-<span>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/hpstr-jekyll-theme/" rel="nofollow">HPSTR Theme</a>.</span>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <span>&copy; {{ 'now' | date: '%Y' }} {{ site.owner.name }}</span>
+    <span class="site-footer__links">
+      <a href="/feed.xml">RSS</a>
+      <a href="https://github.com/{{ site.owner.github }}">GitHub</a>
+      <a href="/about/">关于</a>
+    </span>
+  </div>
+</footer>

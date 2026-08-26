@@ -1,4 +1,5 @@
 ---
+published: false   # 主题自带示例文章，不发布
 layout: post
 title: Post with a Background Image
 description: "Sample post with a background image CSS override."

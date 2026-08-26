@@ -1,90 +1,83 @@
-title:            JessYan's Home
-description:      Describe your website here.
-disqus_shortname: 
-reading_time:     true
-words_per_minute: 200
-# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
-# When testing locally leave blank or use http://localhost:4000
+# ---------------------------------------------------------------------------
+#  Site
+# ---------------------------------------------------------------------------
+title:            JessYan
+tagline:          Android 开发者 · 开源作者
+description:      "Android 开发、架构设计与开源实践。MVPArms、AndroidAutoSize、RetrofitUrlManager 作者。"
 url:              https://jessyan.me
+lang:             zh-CN
 
-# Owner/author information
+# ---------------------------------------------------------------------------
+#  Author / 个人资料
+# ---------------------------------------------------------------------------
 owner:
   name:           JessYan
   avatar:         avatar.jpg
-  bio:            "Hello, I am JessYan, a developer with passion for learning technology and putting into practice all my life."
+  bio:            "热爱技术，也享受把它落到实处。写过一些开源框架，也长期维护它们。"
   email:          jess.yan.effort@gmail.com
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
   github:         JessYanCoding
-  stackexchange:  http://stackoverflow.com/users/6694282/jess-yan
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:
+  # 下面这些留空即不显示
+  juejin:         https://juejin.im/user/57a9dbd9165abd0061714613
   jianshu:        https://www.jianshu.com/u/1d0c0bc634db
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:
+  weibo:          https://weibo.com/u/1786262517
+  stackexchange:  https://stackoverflow.com/users/6694282/jess-yan
+  wechat:         JessYan
+  twitter:
+  linkedin:
 
-# Background image to be tiled on all pages
-background: 
+# 首页展示的开源项目
+projects:
+  - name:         MVPArms
+    url:          https://github.com/JessYanCoding/MVPArms
+    desc:         整合大量主流开源项目的 Android MVP 快速集成框架
+  - name:         AndroidAutoSize
+    url:          https://github.com/JessYanCoding/AndroidAutoSize
+    desc:         低侵入性的 Android 屏幕适配方案
+  - name:         RetrofitUrlManager
+    url:          https://github.com/JessYanCoding/RetrofitUrlManager
+    desc:         运行时动态改变 Retrofit 的 BaseUrl
+  - name:         ArmsComponent
+    url:          https://github.com/JessYanCoding/ArmsComponent
+    desc:         MVPArms 官方快速组件化方案
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+# ---------------------------------------------------------------------------
+#  Build
+# ---------------------------------------------------------------------------
+timezone:         Asia/Shanghai
+future:           true
+highlighter:      rouge
+markdown:         kramdown
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Asia/Shanghai
-future:      true
-highlighter: rouge
-markdown:    kramdown
-plugins:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-feed
-sass:
-  sass_dir: _sass
-  style: compressed
+# 首页展示的最新文章数量
+recent_posts:     8
+chars_per_minute: 350   # 中文按字符估算阅读时间
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
-
-# Amount of post to show on home page
-paginate: 2
+# 保持既有文章 URL 不变（/habit/、/templates/ ...），不要改
+permalink:        /:categories/:title/
 
 kramdown:
-  input: GFM
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
+  input:          GFM
+  auto_ids:       true
+  toc_levels:     2..3
+  syntax_highlighter: rouge
 
-include: 
-  - .htaccess
-exclude: 
-  - "*.less"
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - CHANGELOG
-  - Capfile
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-gist
+
+sass:
+  sass_dir:       _sass
+  style:          compressed
+
+exclude:
   - Gemfile
-  - Gruntfile.js
+  - Gemfile.lock
   - LICENSE
-  - README
-  - Rakefile
-  - config
-  - gulpfile.js
-  - lib
-  - log
-  - node_modules
+  - README.md
+  - Gruntfile.js
   - package.json
-  - spec
-  - tmp
+  - package-lock.json
+  - node_modules
+  - .jshintrc
+  - vendor

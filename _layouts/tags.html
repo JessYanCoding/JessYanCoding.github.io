@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="wrap">
+  <header class="article-header">
+    <h1 class="article-header__title">{{ page.title }}</h1>
+    <div class="article-header__meta">共 {{ site.tags | size }} 个标签</div>
+  </header>
+
+  {%- assign tags = site.tags | sort %}
+  <ul class="tag-cloud">
+    {%- for t in tags %}
+    <li><a class="tag" href="#{{ t[0] | slugify: 'raw' }}">{{ t[0] }}<span class="tag__count">{{ t[1] | size }}</span></a></li>
+    {%- endfor %}
+  </ul>
+
+  {%- for t in tags %}
+  <section class="tag-section" id="{{ t[0] | slugify: 'raw' }}">
+    <h2 class="tag-section__title">{{ t[0] }}</h2>
+    <ul class="archive-list">
+      {%- for p in t[1] %}
+      <li class="archive-item">
+        <span class="archive-item__date">{{ p.date | date: '%Y' }}</span>
+        <span class="archive-item__title"><a href="{{ p.url }}">{{ p.title }}</a></span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+</div>

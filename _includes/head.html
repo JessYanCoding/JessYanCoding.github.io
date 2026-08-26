@@ -1,63 +1,44 @@
 <meta charset="utf-8">
-<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- assign page_title = page.title | default: site.title -%}
+{%- assign page_desc = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
+<title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · {{ site.tagline }}{% endif %}</title>
+<meta name="description" content="{{ page_desc }}">
+{%- if page.tags and page.tags != empty %}
+<meta name="keywords" content="{{ page.tags | join: ', ' }}">
+{%- endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
 
-{% if site.owner.twitter %}<!-- Twitter Cards -->
-{% if page.image.feature %}<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ site.url }}/images/{{ page.image.feature }}">
-{% else %}<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/images/{{ page.image.thumb }}{% else %}{{ site.url }}/images/{{ site.logo }}{% endif %}">{% endif %}
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
+<!-- 主题色：跟随亮/暗，避免 iOS 地址栏割裂 -->
+<meta name="theme-color" content="#fdfdfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1110" media="(prefers-color-scheme: dark)">
 
 <!-- Open Graph -->
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:type" content="article">
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/images/avatar.jpg' | absolute_url }}">
+{%- if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{%- for tag in page.tags %}<meta property="article:tag" content="{{ tag }}">{% endfor %}
+{%- endif %}
+<meta name="twitter:card" content="summary">
 
-{% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
-{% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
-
-{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
-<link rel="canonical" href="{{ canonical }}">
-<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- For all browsers -->
+<!-- 关键资源用根相对路径：不依赖域名，本地预览 / 自定义域 / *.github.io 都能取到 -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<!-- Webfonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic&amp;display=swap"
-      media="print" onload="this.media='all'">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/images/avatar.jpg">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
 
-<meta http-equiv="cleartype" content="on">
-
-<!-- Load Modernizr -->
-<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
-
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="shortcut icon" href="/images/avatar.jpg">
-<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="/images/avatar.jpg">
-<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/avatar.jpg">
-<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/avatar.jpg">
-<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/avatar.jpg">
-
-{% if page.image.background or site.background %}
-{% capture background %}{% if page.image.background %}{{ page.image.background }}{% else %}{{ site.background }}{% endif %}{% endcapture %}
-{% unless background contains 'http://' or background contains 'https://' %}{% capture background %}{{ site.url }}/images/{{ background }}{% endcapture %}{% endunless %}
-<style type="text/css">body {background-image:url({{ background }});}</style>
-{% endif %}
+<!-- 在样式表之后、body 之前定主题，避免暗色模式下的白屏闪烁 -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+})();
+</script>

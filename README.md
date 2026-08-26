@@ -1,27 +1,49 @@
-# HPSTR Jekyll Theme
+# jessyan.me
 
-They say three times the charm, so here is another free responsive Jekyll theme for you. I've learned a ton since open sourcing [my first two themes](https://mademistakes.com/work/jekyll-themes/), and wanted to try a few new things this time around. If you've used my previous themes most of this should be familiar territory.
+[JessYan](https://jessyan.me) 的个人博客源码。Jekyll + GitHub Pages，无前端构建步骤。
 
-**Compatible with Jekyll 3.0 and up.**
+## 结构
 
-## What HPSTR brings to the table:
+```
+_config.yml        站点配置、个人资料（owner）、开源项目列表
+_layouts/          default / page / post / archive / tags
+_includes/         head、header、footer、icon（内联 SVG）、post-item、social-links
+_posts/            文章，纯 Markdown
+assets/css/        main.scss —— 全部样式，含亮/暗主题 token
+assets/js/site.js  主题切换 + 长文目录 + 宽表格滚动，无依赖
+```
 
-* Modern and minimal design.
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Sweet animated menu with support for drop-downs.
-* Optional [Disqus](http://disqus.com) comments and social sharing links.
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* Simple [custom 404 page](http://mmistakes.github.io/hpstr-jekyll-theme/404.html) to get you started.
-* [Syntax highlighting](http://mmistakes.github.io/hpstr-jekyll-theme/code-highlighting-post/) stylesheet to make your code examples look snazzy
-* [Available in Spanish](https://github.com/cruznick/hpstr-jekyll-theme/tree/es). Thanks [@cruznick](https://github.com/cruznick)!
+## 写文章
 
-![HPSTR Theme Preview screenshot](http://mmistakes.github.io/hpstr-jekyll-theme/images/hpstr-jekyll-theme-preview.jpg)
+在 `_posts/` 新建 `YYYY-MM-DD-slug.md`：
 
+```yaml
 ---
+layout: post
+title: 标题
+tags: [标签一, 标签二]
+modified: 2026-01-01   # 可选
+description: 用于摘要和分享卡片  # 可选，不写则自动截取正文
+---
+```
 
-## Getting Started
+URL 由 `permalink: /:categories/:title/` 决定，即 `/slug/`。**不要改这个配置**，已发布文章的链接依赖它。
 
-HPSTR takes advantage of SCSS and data files to make customizing easier. This theme requires Jekyll 3.x and will not work with older versions properly.
+不想发布某篇，加 `published: false`。
 
-To learn how to install and use this theme check out the [Setup Guide](https://mmistakes.github.io/hpstr-jekyll-theme/theme-setup/) for more information.
+## 个人资料
+
+集中在 `_config.yml` 的 `owner`，首页、关于页、文章页作者卡片都从这里读，改一处即可。留空的字段自动不显示。
+
+## 本地预览
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
+
+关键资源（CSS/JS/favicon）用根相对路径，本地预览和线上一致，不需要覆盖 `url`。
+
+## 部署
+
+推到 `master`，GitHub Pages 经典构建自动发布。没有 Actions workflow，也不需要。

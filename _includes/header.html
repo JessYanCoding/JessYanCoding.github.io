@@ -1,0 +1,18 @@
+{%- assign nav = site.data.navigation -%}
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/">
+      <img class="brand__avatar" src="/images/{{ site.owner.avatar }}" alt="" width="28" height="28">
+      <span class="brand__label">{{ site.title }}</span>
+    </a>
+    <nav class="nav" aria-label="站点导航">
+      <a class="nav__link" href="/posts/" {% if page.url == '/posts/' %}aria-current="page"{% endif %}>文章</a>
+      <a class="nav__link" href="/tags/" {% if page.url == '/tags/' %}aria-current="page"{% endif %}>标签</a>
+      <a class="nav__link" href="/about/" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
+      <button class="theme-toggle" type="button" aria-label="切换深色/浅色主题" title="切换主题">
+        <span class="icon-sun">{% include icon.html name="sun" %}</span>
+        <span class="icon-moon">{% include icon.html name="moon" %}</span>
+      </button>
+    </nav>
+  </div>
+</header>
