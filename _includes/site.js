@@ -16,7 +16,7 @@
   // 否则页面变暗了而那一圈还是亮的，看起来就是"只有局部变暗"。
   function paintBrowserChrome(theme) {
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'light' ? '#fbfbfc' : '#08090b');
+    if (meta) meta.setAttribute('content', theme === 'light' ? '#f0eee6' : '#1a1917');
   }
 
   if (btn) {

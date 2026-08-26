@@ -15,7 +15,7 @@
   结果是：系统浅色时点了暗色，页面暗了但 iOS 状态栏/地址栏那一圈还是白的。
   默认值给暗色，因为本站以暗色为基准。
 {%- endcomment -%}
-<meta name="theme-color" content="#08090b">
+<meta name="theme-color" content="#f0eee6">
 
 <!-- Open Graph -->
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
@@ -56,6 +56,6 @@
     ? stored
     : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
   var meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', resolved === 'light' ? '#fbfbfc' : '#08090b');
+  if (meta) meta.setAttribute('content', resolved === 'light' ? '#f0eee6' : '#1a1917');
 })();
 </script>
