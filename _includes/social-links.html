@@ -1,0 +1,7 @@
+{%- comment -%} 个人平台链接，数据来自 _config.yml 的 owner {%- endcomment -%}
+{%- if site.owner.github %}<a class="chip" href="https://github.com/{{ site.owner.github }}">{% include icon.html name="github" %}GitHub</a>{% endif %}
+{%- if site.owner.juejin %}<a class="chip" href="{{ site.owner.juejin }}">{% include icon.html name="pen" %}掘金</a>{% endif %}
+{%- if site.owner.jianshu %}<a class="chip" href="{{ site.owner.jianshu }}">{% include icon.html name="book" %}简书</a>{% endif %}
+{%- if site.owner.weibo %}<a class="chip" href="{{ site.owner.weibo }}">{% include icon.html name="weibo" %}微博</a>{% endif %}
+{%- if site.owner.stackexchange %}<a class="chip" href="{{ site.owner.stackexchange }}">{% include icon.html name="stack" %}Stack Overflow</a>{% endif %}
+{%- if site.owner.email %}<a class="chip" href="mailto:{{ site.owner.email }}">{% include icon.html name="mail" %}Email</a>{% endif %}

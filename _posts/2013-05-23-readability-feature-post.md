@@ -1,4 +1,5 @@
 ---
+published: false   # 主题自带示例文章，不发布
 layout: post
 title: "Post with Large Feature Image and Text"
 description: "Custom written post descriptions are the way to go... if you're not lazy."

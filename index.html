@@ -1,43 +1,43 @@
 ---
-layout: post-index
-title: Welcome
-description: "Describe this nonsense."
-tags: [Jekyll, theme, themes, responsive, blog, modern]
-comments: false
-image:
-  feature: abstract-1.jpg
-  credit: 
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/ 
- 
+layout: default
 ---
+<div class="wrap">
+  <section class="hero">
+    <img class="hero__avatar" src="/images/{{ site.owner.avatar }}" alt="{{ site.owner.name }}" width="68" height="68">
+    <h1 class="hero__name">{{ site.owner.name }}</h1>
+    <p class="hero__tagline">{{ site.tagline }}</p>
+    <p class="hero__bio">{{ site.owner.bio }}</p>
+    <div class="hero__links">{% include social-links.html %}</div>
+  </section>
 
-{% for post in paginator.posts %}
-<article class="hentry">
-  <header>
-    {% if post.image.feature %}
-      <div class="entry-image-index">
-        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
-      </div><!-- /.entry-image -->
-    {% endif %}
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
-      {% if site.reading_time %}
-      <span class="entry-reading-time">
-        <i class="fa fa-clock-o"></i>
-        {% include read-time-index.html %}
-      </span><!-- /.entry-reading-time -->
-      {% endif %}
-    </div><!-- /.entry-meta -->
-    {% if post.link %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
-    {% else %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
-    {% endif %}
-  </header>
-  <div class="entry-content">
-    {{ post.content }}
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-{% endfor %}
+  {%- if site.projects and site.projects != empty %}
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-head__title">开源项目</h2>
+      <a class="section-head__more" href="https://github.com/{{ site.owner.github }}?tab=repositories">全部 &rarr;</a>
+    </div>
+    <ul class="project-grid">
+      {%- for proj in site.projects %}
+      <li>
+        <a class="project-card" href="{{ proj.url }}">
+          <span class="project-card__name">{{ proj.name }}{% include icon.html name="external" %}</span>
+          <span class="project-card__desc">{{ proj.desc }}</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
 
-{% include pagination.html %}
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-head__title">最新文章</h2>
+      <a class="section-head__more" href="/posts/">全部 {{ site.posts | size }} 篇 &rarr;</a>
+    </div>
+    <ul class="post-list">
+      {%- for post in site.posts limit: site.recent_posts %}
+      {%- include post-item.html post=post %}
+      {%- endfor %}
+    </ul>
+  </section>
+</div>

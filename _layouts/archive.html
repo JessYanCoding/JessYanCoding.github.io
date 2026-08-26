@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="wrap">
+  <header class="article-header">
+    <h1 class="article-header__title">{{ page.title }}</h1>
+    <div class="article-header__meta">共 {{ site.posts | size }} 篇</div>
+  </header>
+
+  {%- assign posts_by_year = site.posts | group_by_exp: 'p', "p.date | date: '%Y'" %}
+  {%- for year in posts_by_year %}
+  <section class="year-group">
+    <h2 class="year-group__label">{{ year.name }}</h2>
+    <ul class="archive-list">
+      {%- for p in year.items %}
+      <li class="archive-item">
+        <span class="archive-item__date">{{ p.date | date: '%m-%d' }}</span>
+        <span class="archive-item__title"><a href="{{ p.url }}">{{ p.title }}</a></span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+</div>

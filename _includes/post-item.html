@@ -1,0 +1,12 @@
+{%- assign p = include.post -%}
+<li class="post-item">
+  <h3 class="post-item__title"><a href="{{ p.url }}">{{ p.title }}</a></h3>
+  <p class="post-item__excerpt">{{ p.description | default: p.content | markdownify | strip_html | strip_newlines | truncate: 110 }}</p>
+  <div class="post-item__meta">
+    <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: '%Y-%m-%d' }}</time>
+    {%- if p.tags and p.tags != empty %}
+    <span class="dot">·</span>
+    {%- for tag in p.tags limit: 3 %}<a class="tag tag--plain" href="/tags/#{{ tag | slugify: 'raw' }}">{{ tag }}</a>{% endfor %}
+    {%- endif %}
+  </div>
+</li>

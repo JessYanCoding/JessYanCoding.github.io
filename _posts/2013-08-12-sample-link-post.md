@@ -1,4 +1,5 @@
 ---
+published: false   # 主题自带示例文章，不发布
 layout: post
 title: "Sample Link Post"
 description: "Example and code for using link posts."

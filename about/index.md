@@ -1,32 +1,32 @@
 ---
 layout: page
-title: About the Jekyll Theme
-image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
-comments: false
-modified: 2016-02-01
+title: 关于
+subtitle: Android 开发者 · 开源作者
+description: "关于 JessYan：Android 开发者，MVPArms、AndroidAutoSize、RetrofitUrlManager 等开源项目作者。"
 ---
 
-They say three times the charm, so here is another free responsive Jekyll blog theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. 
+热爱技术，也享受把它落到实处。
 
-If you've used any of [my other themes](http://mademistakes.com/work/jekyll-themes/) most of this should be familiar territory...
+写业务代码容易让人停在「熟练」，所以我写开源框架，并且长期维护它们 —— 框架代码的使用者不能直接改，这份约束会逼着你把设计、注释、文档和向后兼容都做对。这是我认为进步最快的方式。
 
-## HPSTR Features:
+## 开源项目
 
-* Compatible with Jekyll 3 and GitHub Pages.
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Sweet animated menu.
-* Background image support.
-* Support for large images to call out your favorite posts.
-* Optional [Disqus](http://disqus.com) comments.
-* Simple and clear permalink structure[^1].
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* [Custom 404 page]({{ site.url }}/404.html) to get you started.
-* [Syntax highlighting]({{ site.url }}/code-highlighting-post/) stylesheets to make your code examples look snazzy.
+{% for proj in site.projects %}
+- **[{{ proj.name }}]({{ proj.url }})** —— {{ proj.desc }}
+{%- endfor %}
 
-<div markdown="0"><a href="{{ site.url }}/theme-setup/" class="btn btn-info">Theme Setup</a> <a href="https://github.com/mmistakes/hpstr-jekyll-theme" class="btn btn-success">Download HPSTR</a></div>
+完整列表在 [GitHub](https://github.com/{{ site.owner.github }}?tab=repositories)。
 
-[^1]: Example: *domain.com/category-name/post-title*
+## 在这些平台也能找到我
+
+{% if site.owner.github %}- GitHub：<https://github.com/{{ site.owner.github }}>{% endif %}
+{% if site.owner.juejin %}- 掘金：<{{ site.owner.juejin }}>{% endif %}
+{% if site.owner.jianshu %}- 简书：<{{ site.owner.jianshu }}>{% endif %}
+{% if site.owner.weibo %}- 微博：<{{ site.owner.weibo }}>{% endif %}
+{% if site.owner.stackexchange %}- Stack Overflow：<{{ site.owner.stackexchange }}>{% endif %}
+{% if site.owner.wechat %}- 微信公众号：**{{ site.owner.wechat }}**{% endif %}
+{% if site.owner.email %}- 邮箱：<{{ site.owner.email }}>{% endif %}
+
+## 订阅
+
+RSS / Atom：[{{ site.url }}/feed.xml]({{ '/feed.xml' | absolute_url }})

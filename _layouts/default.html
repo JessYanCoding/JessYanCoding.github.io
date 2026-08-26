@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+{%- include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  {%- include header.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {%- include footer.html %}
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
