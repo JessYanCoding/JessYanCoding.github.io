@@ -18,20 +18,20 @@ layout: default
     {%- comment %} 只放能从站点数据算出来的真实数字，不编造 star 数 {% endcomment -%}
     <div class="stats">
       <div class="stat">
-        <div class="stat__num">{{ site.posts | size }}</div>
-        <div class="stat__label">篇文章</div>
+        <div class="stat__label">文章</div>
+        <div class="stat__num">{{ site.posts | size }} 篇</div>
       </div>
       <div class="stat">
-        <div class="stat__num">{{ site.projects | size }}</div>
-        <div class="stat__label">个开源项目</div>
+        <div class="stat__label">开源项目</div>
+        <div class="stat__num">{{ site.projects | size }} 个</div>
       </div>
       <div class="stat">
-        <div class="stat__num">{{ first_year }}</div>
         <div class="stat__label">写作起点</div>
+        <div class="stat__num">{{ first_year }}</div>
       </div>
       <div class="stat">
-        <div class="stat__num">{{ site.tags | size }}</div>
-        <div class="stat__label">个主题</div>
+        <div class="stat__label">主题</div>
+        <div class="stat__num">{{ site.tags | size }} 个</div>
       </div>
     </div>
   </section>
