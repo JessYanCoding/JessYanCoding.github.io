@@ -69,6 +69,11 @@
   --syn-err:     rgb(255, 118, 118);
   --syn-add:     rgb(158, 226, 147);
   --syn-del:     rgb(255, 118, 118);
+
+  /* 告诉浏览器按暗色渲染 UA 部件：滚动条、表单控件，
+     以及 iOS Safari 橡皮筋回弹时露出的那块画布。
+     缺了这一条，页面变暗了但浏览器自己那一圈还是亮的 —— 看起来就是"只有局部变暗"。 */
+  color-scheme: dark;
 }
 
 /* 系统偏好浅色时切到浅色；无偏好则保持暗色 */
@@ -96,8 +101,11 @@
     --selection: rgba(8, 145, 178, 0.18);
     --shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 8px 30px rgba(15, 17, 21, 0.06);
     --card-hover-glow: 0 0 0 1px var(--accent-line), 0 8px 30px rgba(8, 145, 178, 0.10);
+    color-scheme: light;
   }
 }
+
+:root[data-theme="dark"] { color-scheme: dark; }
 
 :root[data-theme="light"] {
   --bg:          rgb(251, 251, 252);
@@ -122,6 +130,7 @@
   --selection: rgba(8, 145, 178, 0.18);
   --shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 8px 30px rgba(15, 17, 21, 0.06);
   --card-hover-glow: 0 0 0 1px var(--accent-line), 0 8px 30px rgba(8, 145, 178, 0.10);
+  color-scheme: light;
 }
 
 /* 窄屏收一档大字号，390px 下标题不至于顶满整行 */

@@ -9,9 +9,13 @@
 {%- endif %}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-<!-- 主题色：跟随亮/暗，避免 iOS 地址栏割裂 -->
-<meta name="theme-color" content="#fdfdfc" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f1110" media="(prefers-color-scheme: dark)">
+{%- comment -%}
+  只放一个 theme-color，由下面的脚本按"实际生效的主题"设置。
+  用 media="(prefers-color-scheme:...)" 的写法只认系统偏好、不认切换按钮，
+  结果是：系统浅色时点了暗色，页面暗了但 iOS 状态栏/地址栏那一圈还是白的。
+  默认值给暗色，因为本站以暗色为基准。
+{%- endcomment -%}
+<meta name="theme-color" content="#08090b">
 
 <!-- Open Graph -->
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
@@ -42,9 +46,16 @@
 <!-- 在样式表之后、body 之前定主题，避免暗色模式下的白屏闪烁 -->
 <script>
 (function () {
-  try {
-    var t = localStorage.getItem('theme');
-    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
-  } catch (e) {}
+  var stored = null;
+  try { stored = localStorage.getItem('theme'); } catch (e) {}
+  if (stored === 'dark' || stored === 'light') {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  // 实际生效的主题 = 手动选择，否则跟随系统（无偏好时按暗色）
+  var resolved = stored === 'dark' || stored === 'light'
+    ? stored
+    : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', resolved === 'light' ? '#fbfbfc' : '#08090b');
 })();
 </script>

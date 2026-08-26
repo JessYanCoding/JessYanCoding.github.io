@@ -12,13 +12,33 @@
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
+  // 浏览器 UI 的颜色（iOS 状态栏/地址栏）不受 CSS 控制，必须同步改 meta，
+  // 否则页面变暗了而那一圈还是亮的，看起来就是"只有局部变暗"。
+  function paintBrowserChrome(theme) {
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'light' ? '#fbfbfc' : '#08090b');
+  }
+
   if (btn) {
     btn.addEventListener('click', function () {
       var next = currentTheme() === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
+      paintBrowserChrome(next);
       try { localStorage.setItem('theme', next); } catch (e) {}
     });
   }
+
+  // 没有手动选择过时，跟随系统实时变化
+  var mq = window.matchMedia('(prefers-color-scheme: light)');
+  var onSystemChange = function () {
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    if (stored !== 'dark' && stored !== 'light') {
+      paintBrowserChrome(mq.matches ? 'light' : 'dark');
+    }
+  };
+  if (mq.addEventListener) mq.addEventListener('change', onSystemChange);
+  else if (mq.addListener) mq.addListener(onSystemChange);
 
   /* ---------------- 长文目录 ---------------- */
   var toc = document.getElementById('toc');
