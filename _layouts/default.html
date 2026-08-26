@@ -5,6 +5,12 @@
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
+  {%- comment %} 背景层：网格 + 光晕 + 噪点，纯 CSS，无外部资源 {% endcomment -%}
+  <div class="backdrop" aria-hidden="true">
+    <div class="backdrop__grid"></div>
+    <div class="backdrop__glow"></div>
+    <div class="backdrop__noise"></div>
+  </div>
   {%- include header.html %}
   <main id="main">
     {{ content }}

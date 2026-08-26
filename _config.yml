@@ -27,18 +27,27 @@ owner:
 
 # 首页展示的开源项目
 projects:
+  # stars 字段留空即不显示 —— 需要真实数字，不编造
   - name:         MVPArms
     url:          https://github.com/JessYanCoding/MVPArms
     desc:         整合大量主流开源项目的 Android MVP 快速集成框架
+    lang:         Java
+    stars:
   - name:         AndroidAutoSize
     url:          https://github.com/JessYanCoding/AndroidAutoSize
     desc:         低侵入性的 Android 屏幕适配方案
+    lang:         Java
+    stars:
   - name:         RetrofitUrlManager
     url:          https://github.com/JessYanCoding/RetrofitUrlManager
     desc:         运行时动态改变 Retrofit 的 BaseUrl
+    lang:         Java
+    stars:
   - name:         ArmsComponent
     url:          https://github.com/JessYanCoding/ArmsComponent
     desc:         MVPArms 官方快速组件化方案
+    lang:         Java
+    stars:
 
 # ---------------------------------------------------------------------------
 #  Build
