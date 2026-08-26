@@ -10,14 +10,15 @@ layout: default
 {%- assign minutes = chars | divided_by: site.chars_per_minute | plus: 1 -%}
 <div class="wrap">
   <header class="article-header">
+    <a class="back-link" href="/posts/">{% include icon.html name="arrow-left" %}全部文章</a>
     <h1 class="article-header__title">{{ page.title }}</h1>
     <div class="article-header__meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y 年 %-m 月 %-d 日' }}</time>
-      <span class="dot">·</span>
-      <span>约 {{ minutes }} 分钟</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+      <span class="dot">/</span>
+      <span>{{ minutes }} min read</span>
       {%- if page.modified %}
-      <span class="dot">·</span>
-      <span>更新于 {{ page.modified | date: '%Y-%m-%d' }}</span>
+      <span class="dot">/</span>
+      <span>更新于 {{ page.modified | date: '%Y.%m.%d' }}</span>
       {%- endif %}
     </div>
     {%- if page.tags and page.tags != empty %}
@@ -27,7 +28,7 @@ layout: default
     {%- endif %}
   </header>
 
-  {%- comment %} 长文才给目录，短文加了反而碍事 {% endcomment -%}
+  {%- comment %} 目录由 site.js 从正文标题生成，标题少于 3 个则保持隐藏 {% endcomment -%}
   <details class="toc" id="toc" hidden>
     <summary class="toc__label">目录</summary>
     <nav aria-label="文章目录"></nav>
@@ -39,7 +40,7 @@ layout: default
 
   <footer class="article-footer">
     <div class="author-card">
-      <img class="author-card__avatar" src="/images/{{ site.owner.avatar }}" alt="{{ site.owner.name }}" width="48" height="48">
+      <img class="author-card__avatar" src="/images/{{ site.owner.avatar }}" alt="{{ site.owner.name }}" width="46" height="46">
       <div>
         <div class="author-card__name">{{ site.owner.name }}</div>
         <p class="author-card__bio">{{ site.owner.bio }}</p>

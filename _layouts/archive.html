@@ -3,8 +3,9 @@ layout: default
 ---
 <div class="wrap">
   <header class="article-header">
+    <span class="kicker">Archive</span>
     <h1 class="article-header__title">{{ page.title }}</h1>
-    <div class="article-header__meta">共 {{ site.posts | size }} 篇</div>
+    <div class="article-header__meta"><span>{{ site.posts | size }} 篇 / {{ site.tags | size }} 个主题</span></div>
   </header>
 
   {%- assign posts_by_year = site.posts | group_by_exp: 'p', "p.date | date: '%Y'" %}
@@ -14,7 +15,7 @@ layout: default
     <ul class="archive-list">
       {%- for p in year.items %}
       <li class="archive-item">
-        <span class="archive-item__date">{{ p.date | date: '%m-%d' }}</span>
+        <span class="archive-item__date">{{ p.date | date: '%m.%d' }}</span>
         <span class="archive-item__title"><a href="{{ p.url }}">{{ p.title }}</a></span>
       </li>
       {%- endfor %}

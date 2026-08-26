@@ -3,8 +3,9 @@ layout: default
 ---
 <div class="wrap">
   <header class="article-header">
+    <span class="kicker">Topics</span>
     <h1 class="article-header__title">{{ page.title }}</h1>
-    <div class="article-header__meta">共 {{ site.tags | size }} 个标签</div>
+    <div class="article-header__meta"><span>{{ site.tags | size }} 个标签</span></div>
   </header>
 
   {%- assign tags = site.tags | sort %}

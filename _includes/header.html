@@ -1,9 +1,8 @@
-{%- assign nav = site.data.navigation -%}
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="/">
-      <img class="brand__avatar" src="/images/{{ site.owner.avatar }}" alt="" width="28" height="28">
-      <span class="brand__label">{{ site.title }}</span>
+      <span class="brand__mark">{% include icon.html name="terminal" %}</span>
+      <span class="brand__label">jessyan.me</span>
     </a>
     <nav class="nav" aria-label="站点导航">
       <a class="nav__link" href="/posts/" {% if page.url == '/posts/' %}aria-current="page"{% endif %}>文章</a>
