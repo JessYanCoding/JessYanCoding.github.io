@@ -79,7 +79,7 @@ dependencies {
 
 * GitHub:  <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end

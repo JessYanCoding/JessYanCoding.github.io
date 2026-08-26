@@ -68,12 +68,12 @@ image:
 
 # Architectural
 
-![Architecture](http://upload-images.jianshu.io/upload_images/2974769-9036b892e4e4eee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Architecture](https://upload-images.jianshu.io/upload_images/2974769-9036b892e4e4eee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 # Package Structure
 
 ![package](
-http://upload-images.jianshu.io/upload_images/2974769-651964f23e93843c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
+https://upload-images.jianshu.io/upload_images/2974769-651964f23e93843c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360)
 
 
 # How?
@@ -200,8 +200,8 @@ public class UserPresenter extends BasePresenter<UserContract.Model, UserContrac
 ---
 **Hello 我叫 JessYan，如果您喜欢我的文章，可以在以下平台关注我**
 
-* 个人主页: <http://jessyan.me>
+* 个人主页: <https://jessyan.me>
 * GitHub: <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>

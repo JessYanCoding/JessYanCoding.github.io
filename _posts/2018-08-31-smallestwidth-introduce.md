@@ -9,16 +9,16 @@ image:
 
 以下是 **骚年你的屏幕适配方式该升级了!** 系列文章，欢迎转发以及分享:
 
-* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
-* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
-* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
+* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/)
+* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](https://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](https://jessyan.me/autosize-publish/)
 
 # 前言
-**ok**，根据上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](http://jessyan.me/autosize-introduce/) 的承诺，本文是这个系列的第二篇文章，这篇文章会详细讲解 **smallestWidth 限定符屏幕适配方案**
+**ok**，根据上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](https://jessyan.me/autosize-introduce/) 的承诺，本文是这个系列的第二篇文章，这篇文章会详细讲解 **smallestWidth 限定符屏幕适配方案**
 
 了解我的朋友一定知道，[MVPArms](https://github.com/JessYanCoding/MVPArms) 一直使用的是 **鸿神** 的 **AndroidAutoLayout** 屏幕适配方案，得益于 **AndroidAutoLayout** 的便捷，所以我对屏幕适配领域研究的不是很多，**AndroidAutoLayout** 停止维护后，我也一直在找寻着替代方案，直到 **今日头条屏幕适配方案** 刷屏，后来又无意间看到了 **smallestWidth 限定符屏幕适配方案**，这才慢慢的将研究方向转向了屏幕适配领域
 
-最近一个月才开始慢慢恶补 **Android** 屏幕适配的相关知识，对这两个方案也进行了更深入的研究，可以说从一个小白慢慢成长而来，所以我明白小白的痛，因此在上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](http://jessyan.me/autosize-introduce/) 中，把 **今日头条屏幕适配方案** 讲得非常的细，尽量把每一个知识点都描述清晰，深怕小白漏掉每一个细节，这篇文章我也会延续上一篇文章的优良传统，将 **smallestWidth 限定符屏幕适配方案** 的每一个知识点都描述清晰
+最近一个月才开始慢慢恶补 **Android** 屏幕适配的相关知识，对这两个方案也进行了更深入的研究，可以说从一个小白慢慢成长而来，所以我明白小白的痛，因此在上一篇文章 [骚年你的屏幕适配方式该升级了!-今日头条适配方案](https://jessyan.me/autosize-introduce/) 中，把 **今日头条屏幕适配方案** 讲得非常的细，尽量把每一个知识点都描述清晰，深怕小白漏掉每一个细节，这篇文章我也会延续上一篇文章的优良传统，将 **smallestWidth 限定符屏幕适配方案** 的每一个知识点都描述清晰
 
 顺便说一句，感谢大家对 [AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md) 的支持，我只是在上一篇文章中提了一嘴我刚发布的屏幕适配框架 [AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md)，还没给出详细的介绍和原理剖析 (原计划在本系列的第三篇文章中发布)，[AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md) 就被大家推上了 [Github Trending](https://github.com/trending/java?since=daily)，一个多星期就拿了 **2k+ stars**，随着关注度的增加，我在这段时间里也累坏了，**issues** 就没断过，不到半个月就提交了 **200** 多次 **commit**，但累并快乐着，在这里要再次感谢大家对 [AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md) 的认可
 
@@ -347,17 +347,17 @@ ok，还是按照上一篇文章的叙述方式，现在来举栗说明，帮助
 
 以下是 **骚年你的屏幕适配方式该升级了!** 系列文章，欢迎转发以及分享:
 
-* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
-* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
-* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
+* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/)
+* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](https://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](https://jessyan.me/autosize-publish/)
 
 ---
 **Hello 我叫 JessYan，如果您喜欢我的文章，可以在以下平台关注我**
 
-* 个人主页: <http://jessyan.me>
+* 个人主页: <https://jessyan.me>
 * GitHub: <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end

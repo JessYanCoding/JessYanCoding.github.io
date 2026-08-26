@@ -9,12 +9,12 @@ image:
 
 以下是 **骚年你的屏幕适配方式该升级了!** 系列文章，欢迎转发以及分享:
 
-* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
-* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
-* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
+* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/)
+* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](https://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](https://jessyan.me/autosize-publish/)
 
 # 前言
-我在前面两篇文章中详细介绍了 [今日头条适配方案](http://jessyan.me/autosize-introduce/) 和 [SmallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/) 的原理，并验证了它们的可行性，以及总结了它们各自的优缺点，可以说这两个方案都是目前比较优秀、比较主流的 **Android** 屏幕适配方案，而且它们都已经拥有了一定的用户基数
+我在前面两篇文章中详细介绍了 [今日头条适配方案](https://jessyan.me/autosize-introduce/) 和 [SmallestWidth 限定符适配方案](https://jessyan.me/smallestwidth-introduce/) 的原理，并验证了它们的可行性，以及总结了它们各自的优缺点，可以说这两个方案都是目前比较优秀、比较主流的 **Android** 屏幕适配方案，而且它们都已经拥有了一定的用户基数
 
 但是对于一些才接触这两个方案的朋友，肯定或多或少还是不知道如何选择这两个方案，我虽然在之前的文章中给出了它们各自的优缺点，但是并没有用统一的标准对它们进行更细致的对比，所以也就没办法更形象的体现它们的优劣，那下面我就用统一的标准对它们进行对比，看看它们的对比情况
 
@@ -70,7 +70,7 @@ image:
 
 于是我带着我的这些标准在网上搜寻了很久，发现并没有任何一个开源框架或解决方案能够达到我的所有标准，它们大多数还只是停留在将 **今日头条屏幕适配方案** 封装成工具类来引入项目的阶段，这样在功能的扩展上有限制，并且对用户的使用体验也不好，而我想做的是一个全面性的产品级屏幕适配框架，这离我最初的构想，差距还非常大，于是我只好自己动手，将我的所有思想实现，这才有了 **AndroidAutoSize**
 
-写完 **AndroidAutoSize** 框架后，因为对 **今日头条屏幕适配方案** 有了更加深入的理解，所以才写了 [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)，以帮助大家更清晰的理解 **今日头条屏幕适配方案**
+写完 **AndroidAutoSize** 框架后，因为对 **今日头条屏幕适配方案** 有了更加深入的理解，所以才写了 [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/)，以帮助大家更清晰的理解 **今日头条屏幕适配方案**
 
 ### 与 AndroidAutoLayout 的关系
 **AndroidAutoSize** 因为名字和 **鸿神** 的 **AndroidAutoLayout** 非常相似，并且在填写设计图尺寸的方式上也极为相似，再加上我写的屏幕适配系列的文章也发布在了 **鸿神** 的公众号上，所以很多人以为 **AndroidAutoSize** 是 **鸿神** 写的 **AndroidAutoLayout** 的升级版，这里我哭笑不得 😂，我只好在这里说一句，大家好，我叫 [JessYan](https://github.com/JessYanCoding)，的确可以理解为 **AndroidAutoSize** 是 **AndroidAutoLayout** 的升级版，但是它是我写的，关注一波呗
@@ -293,7 +293,7 @@ public class CancelAdaptFragment extends Fragment implements CancelAdapt {
 # 总结
 [**AndroidAutoSize**](https://github.com/JessYanCoding/AndroidAutoSize) 在经历了 **240+ commit**、**60+ issues**、**6 个版本** 的洗礼后，逐渐的稳定了下来，已经在上个星期发布了首个正式版，在这里要感谢将 **AndroidAutoSize** 接入到自己项目中的上千个使用者，感谢他们的信赖，**AndroidAutoSize** 创建的初衷就是为了让所有使用 **今日头条屏幕适配方案** 的使用者能有一个可以一起交流、沟通的聚集地，所以后面也会持续的收集并解决 [今日头条屏幕适配方案的常见问题](https://github.com/JessYanCoding/AndroidAutoSize/issues/13)，让 **今日头条屏幕适配方案** 变得更加成熟、稳定
 
-至此本系列的第三篇文章也就完结了，这也预示着这个系列连载的终结，这篇文章建议结合系列的第一篇文章 [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/) 一起看，这样可以对 **今日头条屏幕适配方案** 有一个更深入的理解，如果你能将整个系列的文章都全部认真看完，那你对 **Android** 屏幕适配领域的相关知识绝对会有一个飞速的提升!
+至此本系列的第三篇文章也就完结了，这也预示着这个系列连载的终结，这篇文章建议结合系列的第一篇文章 [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/) 一起看，这样可以对 **今日头条屏幕适配方案** 有一个更深入的理解，如果你能将整个系列的文章都全部认真看完，那你对 **Android** 屏幕适配领域的相关知识绝对会有一个飞速的提升!
 
 当你的项目需要切换某个框架时，你会怎么去考察、分析、对比现有的开源方案，并有足够的理由去选择或优化一个最适合自己项目的方案呢？其实整个系列文章可以看作是我怎么去选择同类型开源方案的过程，你以后当遇到同样的选择也可以参照我的思维方式去处理，当然如果以后面试官问到你屏幕适配相关的问题，你能将我如何选择、分析、对比已有方案的过程以及文章中的核心知识点告诉给面试官，那肯定比你直接说一句我使用的是某某开源库有价值得多
 
@@ -302,17 +302,17 @@ public class CancelAdaptFragment extends Fragment implements CancelAdapt {
 
 以下是 **骚年你的屏幕适配方式该升级了!** 系列文章，欢迎转发以及分享:
 
-* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
-* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
-* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
+* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/)
+* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](https://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](https://jessyan.me/autosize-publish/)
 
 ---
 **Hello 我叫 JessYan，如果您喜欢我的文章，可以在以下平台关注我**
 
-* 个人主页: <http://jessyan.me>
+* 个人主页: <https://jessyan.me>
 * GitHub: <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end

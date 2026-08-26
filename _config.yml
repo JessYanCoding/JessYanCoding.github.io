@@ -5,7 +5,7 @@ reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-url:
+url:              https://jessyan.me
 
 # Owner/author information
 owner:
@@ -22,7 +22,7 @@ owner:
   instagram:      
   flickr:         
   tumblr:
-  简书:            https://www.jianshu.com/u/1d0c0bc634db         
+  jianshu:        https://www.jianshu.com/u/1d0c0bc634db
   # google plus id, include the '+', eg +mmistakes
   google_plus:
 
@@ -36,11 +36,11 @@ google_verify:
 bing_verify:         
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Asia/Shanghai
 future:      true
 highlighter: rouge
 markdown:    kramdown
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-gist

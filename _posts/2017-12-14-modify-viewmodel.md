@@ -45,7 +45,7 @@ Android 官方架构组件在今年 5 月份 Google I/O 大会上被公布, 直�
 
 上面介绍了生命周期组件的功能, 这里就来分析一下生命周期组件是否有必要引入我的框架 [**MVPArms**](https://github.com/JessYanCoding/MVPArms)
 
-说到生命周期我就想到了我之前在 [传统MVP用在项目中是真的方便还是累赘?](http://www.jianshu.com/p/ac51c9b88af3) 中讨论的一个内容
+说到生命周期我就想到了我之前在 [传统MVP用在项目中是真的方便还是累赘?](https://www.jianshu.com/p/ac51c9b88af3) 中讨论的一个内容
 
 现在市面上流行的 **MVP** 架构有两种, **第一种是将 Activity 或 Fragment 作为 View, 抽象一个 Presenter 层出来**, **第二种是将 Activity 或 Fragment 作为 Presenter, 抽象一个 View 层出来**
 
@@ -162,8 +162,8 @@ setRetainInstance(true);
 
 * GitHub:  <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end
 

@@ -14,7 +14,7 @@ image:
 
 > Github : [你的 Star 是我坚持的动力 ✊](https://github.com/JessYanCoding/ProgressManager)
 
-![gif](http://upload-images.jianshu.io/upload_images/2974769-eeebf467b9d5e793.gif?imageMogr2/auto-orient/strip)
+![gif](https://upload-images.jianshu.io/upload_images/2974769-eeebf467b9d5e793.gif?imageMogr2/auto-orient/strip)
 
 # 罗列需求
 上传下载是大多数 **APP** 必备的功能,显示进度条也是提高用户体验的重要一环,当然作为 **可配置化集成框架** [MVPArms](https://github.com/JessYanCoding/MVPArms/wiki) 的作者,我想再次提高开发者的使用体验以及开发效率,那我就必须提供一套解决方案
@@ -132,8 +132,8 @@ ProgressManager.post(标记,事件);
 
 * GitHub:  <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end
 

@@ -9,7 +9,7 @@ image:
 
 
 # 前言
-距离 [上篇文章](http://www.jianshu.com/p/ac51c9b88af3) 的发表时间已经过去两个多月了,这两个月时间里我没写文章但一直在更新着我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架,让他逐渐朝着 **可配置化集成框架** 发展
+距离 [上篇文章](https://www.jianshu.com/p/ac51c9b88af3) 的发表时间已经过去两个多月了,这两个月时间里我没写文章但一直在更新着我的 [MVPArms](https://github.com/JessYanCoding/MVPArms) 框架,让他逐渐朝着 **可配置化集成框架** 发展
 
 就在前段时间我在 **鸿洋公众号** 上看到了一篇文章,大概是介绍怎么封装 **BaseActivity** ,让 **Activity** 通过几行代码就可以实现 **ToolBar** 
 
@@ -424,7 +424,7 @@ public class WEApplication extends BaseApplication{
 
 * GitHub:  <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end
