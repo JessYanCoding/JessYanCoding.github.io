@@ -9,9 +9,9 @@ image:
 
 以下是 **骚年你的屏幕适配方式该升级了!** 系列文章，欢迎转发以及分享:
 
-* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
-* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
-* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
+* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/)
+* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](https://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](https://jessyan.me/autosize-publish/)
 
 # 前言
 这个月在 **Android** 技术圈中 **屏幕适配** 这个词曝光率挺高的，为什么这么说呢？因为这个月陆续有多个大佬发布了屏幕适配相关的文章，公布了自己认可的屏幕适配方案
@@ -270,19 +270,19 @@ public static float applyDimension(int unit, float value,
 
 以下是 **骚年你的屏幕适配方式该升级了!** 系列文章，欢迎转发以及分享:
 
-* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](http://jessyan.me/autosize-introduce/)
-* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](http://jessyan.me/smallestwidth-introduce/)
-* [今日头条屏幕适配方案终极版正式发布!](http://jessyan.me/autosize-publish/)
+* [骚年你的屏幕适配方式该升级了!（一）-今日头条适配方案](https://jessyan.me/autosize-introduce/)
+* [骚年你的屏幕适配方式该升级了!（二）-smallestWidth 限定符适配方案](https://jessyan.me/smallestwidth-introduce/)
+* [今日头条屏幕适配方案终极版正式发布!](https://jessyan.me/autosize-publish/)
 
 
 ---
 **Hello 我叫 JessYan，如果您喜欢我的文章，可以在以下平台关注我**
 
-* 个人主页: <http://jessyan.me>
+* 个人主页: <https://jessyan.me>
 * GitHub: <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end
 

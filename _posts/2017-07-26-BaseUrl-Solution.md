@@ -9,7 +9,7 @@ image:
 
 
 # 前言
-Hello,我是 **JessYan**,作为一个喜欢探索新颖解决方案的我,在 [上篇文章](http://www.jianshu.com/p/5832c776621f) 中,向大家介绍了怎样通过一行代码即可实现上传下载以及 **Glide** 进度监听,现在又给大家带来了另一项大家都很期待的问题的解决方案,这个问题起源于 [MVPArms](https://github.com/JessYanCoding/MVPArms) 的一个 [Issues](https://github.com/JessYanCoding/MVPArms/issues/27) ,当然使用 **Retrofit** 时,多个 BaseUrl 以及动态切换 BaseUrl 这两个需求,在其他地方也经常被讨论,那么下面就来讲讲我的思路和解决方案
+Hello,我是 **JessYan**,作为一个喜欢探索新颖解决方案的我,在 [上篇文章](https://www.jianshu.com/p/5832c776621f) 中,向大家介绍了怎样通过一行代码即可实现上传下载以及 **Glide** 进度监听,现在又给大家带来了另一项大家都很期待的问题的解决方案,这个问题起源于 [MVPArms](https://github.com/JessYanCoding/MVPArms) 的一个 [Issues](https://github.com/JessYanCoding/MVPArms/issues/27) ,当然使用 **Retrofit** 时,多个 BaseUrl 以及动态切换 BaseUrl 这两个需求,在其他地方也经常被讨论,那么下面就来讲讲我的思路和解决方案
 
 > Github : [你的 Star 是我坚持的动力 ✊](https://github.com/JessYanCoding/RetrofitUrlManager)
 
@@ -133,7 +133,7 @@ Hello,我是 **JessYan**,作为一个喜欢探索新颖解决方案的我,在 [�
 
 * GitHub:  <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end

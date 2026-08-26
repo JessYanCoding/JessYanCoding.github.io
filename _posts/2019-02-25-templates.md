@@ -10,57 +10,57 @@ image:
 CV 工程师你好，以下内容会让你感觉到不适，慎入！
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-1140507e223ed1c4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-1140507e223ed1c4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在平时的开发工作中，我们经常将一个地方的代码，复制粘贴到另外一个地方，俗称搬砖，搬砖搬多了，作为一个资深的挨踢民工，难免会总结一些提高生产力的搬砖经验
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-3b1afc8d85f75091?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-3b1afc8d85f75091?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Android Studio 模板是个提高生产力的好东西，使用过 MVPArms 的朋友，都应该使用过我提供的配套模板，使用该套模板，一键即可生成整个页面需要的所有文件，甚至还可以一键生成整个 Module，真正的解放了大家的双手，让大家的双手可以去做更多热爱的事情
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-dadd1cf5da805a4d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-dadd1cf5da805a4d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Android Stuidio 模板一共有 4 种类型，分别对应不同的功能，我先来简单介绍下这 4 种模板，最后再着重介绍下一键生成 Module 的模板，因为前面 3 种模板在网上有太多优秀的教程了，而 Module 模板的资料非常少，我再重复写一遍前 3 种模板的教程也不一定有别人写得好，意义并不大，所以我前面只做简单介绍，后面会贴出一些教程链接，没了解过的就当科普了，了解过的就直接跳过
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-e12580d4548ae690?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-e12580d4548ae690?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 现在还差几个 star 就超过 Mozilla 在模板语言 Freemarker 中排名 star 全球第一了，让我得瑟一下😏
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-7bedd83c5eb7c978?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-7bedd83c5eb7c978?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Live Templates
 
 Live Templates 的功能主要是根据关键字快速生成代码块
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-b708734058e28f8b?imageMogr2/auto-orient/strip)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+![image](https://upload-images.jianshu.io/upload_images/2974769-b708734058e28f8b?imageMogr2/auto-orient/strip)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 
 在设置中找到 Live Templates，点击红框中的按钮 "+"，即可新建 Live Templates
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-06f499d2bc389c16?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-06f499d2bc389c16?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ## File Templates
 File Templates 顾名思义，主要功能就是一键生成单个文件
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-ac257dcc05784a7c?imageMogr2/auto-orient/strip)
+![image](https://upload-images.jianshu.io/upload_images/2974769-ac257dcc05784a7c?imageMogr2/auto-orient/strip)
 
 在设置中找到 File and Code Templates，点击红框中的按钮 "+"，即可新建 File Templates
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-21da25a356300083?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-21da25a356300083?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Activity Templates
 Activity Templates 可以一键生成多个文件，但不光可以生成 Activity 文件，还可以根据需求生成任何 Java 文件、XML 文件以及其他类型的文件
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-e0d264a482e88d8e?imageMogr2/auto-orient/strip)
+![image](https://upload-images.jianshu.io/upload_images/2974769-e0d264a482e88d8e?imageMogr2/auto-orient/strip)
 
 新建 Activity Templates 要比上面的两个模板复杂的多，需要使用到 FreeMarker，感兴趣的朋友，可以看看我开源的 [Activity Templates](https://github.com/JessYanCoding/MVPArmsTemplate)，稍微修改一下就能应用到自己的项目当中
 
@@ -68,7 +68,7 @@ Activity Templates 可以一键生成多个文件，但不光可以生成 Activi
 module Templates 可以一键生成 Module 以及 Module 中所需要的所有文件
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-dc02ba6b268e0745?imageMogr2/auto-orient/strip)
+![image](https://upload-images.jianshu.io/upload_images/2974769-dc02ba6b268e0745?imageMogr2/auto-orient/strip)
 
 module Templates 也是使用 FreeMarker 创建的，如果你能理解 Activity Templates，那你也可以快速的新建一个 module Templates
 
@@ -80,13 +80,13 @@ Module Templates 其实要比 Activity Templates 简单很多，因为 Module Te
 Android Studio 中所有的 module Templates 都放在 gradle-projects 这个目录中（Android Studio 安装目录/plugins/android/lib/templates/gradle-projects），如果按照很多教程中对 Activity Templates 学习方法的描述，我们应该按照和 Activity Templates 一样的学习方式，打开 gradle-projects 目录中的 NewAndroidModule 进行学习
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-24df7f987cde4bc6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-24df7f987cde4bc6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 但是我可以告诉大家，在你没有足够经验的情况下，最好不要这样做，因为这个文件夹中包含着 Android Studio 创建 Android Module 所需要的所有文件和代码，里面比较复杂，有很多判断条件，很多东西对你的项目来说都用不到，在学习时会耽误你很多时间
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-97b367d979f63a87?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-97b367d979f63a87?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 所以为了让大家快速上手，我就用我已经开源的 [module Templates](https://github.com/JessYanCoding/MVPArms-Module-Template) 作为学习案例，里面的所有文件和代码都是经过我筛选过后提取出来的，非常易于大家学习和理解
 
@@ -128,7 +128,7 @@ root 文件夹下包含的是生成 Module 所需要的模板文件，template_n
 template.xml 放置的是配置面板的参数，配置面板是什么东西？看下图
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-b55dcd2c7f345ceb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-b55dcd2c7f345ceb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 module Templates 和 Activity Templates 的配置面板不一样，Activity Templates 可以任意修改和新增配置面板中的项目，但是 module Templates 不可以，只能固定为图中的这四项
 
@@ -273,15 +273,15 @@ root 文件夹下模板文件的编写也不难，因为 module Templates 没有
 扫码关注我的公众号 JessYan，一起学习进步，如果框架有更新，我也会在公众号上第一时间通知大家
 
 
-![image](http://upload-images.jianshu.io/upload_images/2974769-222576128821ca4a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/2974769-222576128821ca4a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
 **Hello 我叫 JessYan，如果您喜欢我的文章，可以在以下平台关注我**
 
-* 个人主页: <http://jessyan.me>
+* 个人主页: <https://jessyan.me>
 * GitHub: <https://github.com/JessYanCoding>
 * 掘金: <https://gold.xitu.io/user/57a9dbd9165abd0061714613>
-* 简书: <http://www.jianshu.com/u/1d0c0bc634db>
-* 微博: <http://weibo.com/u/1786262517>
+* 简书: <https://www.jianshu.com/u/1d0c0bc634db>
+* 微博: <https://weibo.com/u/1786262517>
 
 -- The end
