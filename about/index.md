@@ -1,11 +1,13 @@
 ---
 layout: page
 title: 关于
-subtitle: Android 开发者 · 开源作者
-description: "关于 JessYan：Android 开发者，MVPArms、AndroidAutoSize、RetrofitUrlManager 等开源项目作者。"
+subtitle: 全栈开发者 · 开源作者
+description: "关于 JessYan：全栈开发者，MVPArms、AndroidAutoSize、RetrofitUrlManager 等开源项目作者。"
 ---
 
 热爱技术，也享受把它落到实处。
+
+不给自己划技术栈的边界。语言和框架都是工具，需要什么就学什么 —— 真正稀缺的从来不是某一门技术，而是把问题拆清楚、把方案落到实处的能力。
 
 写业务代码容易让人停在「熟练」，所以我写开源框架，并且长期维护它们 —— 框架代码的使用者不能直接改，这份约束会逼着你把设计、注释、文档和向后兼容都做对。这是我认为进步最快的方式。
 

@@ -2,8 +2,8 @@
 #  Site
 # ---------------------------------------------------------------------------
 title:            JessYan
-tagline:          Android 开发者 · 开源作者
-description:      "Android 开发、架构设计与开源实践。MVPArms、AndroidAutoSize、RetrofitUrlManager 作者。"
+tagline:          全栈开发者 · 开源作者
+description:      "工程实践、架构设计与开源。MVPArms、AndroidAutoSize、RetrofitUrlManager 等开源项目作者。"
 url:              https://jessyan.me
 lang:             zh-CN
 
@@ -13,7 +13,7 @@ lang:             zh-CN
 owner:
   name:           JessYan
   avatar:         avatar.jpg
-  bio:            "热爱技术，也享受把它落到实处。写过一些开源框架，也长期维护它们。"
+  bio:            "热爱技术，也享受把它落到实处。不给自己划技术栈的边界 —— 需要什么就学什么，写过一些开源框架，也长期维护它们。"
   email:          jess.yan.effort@gmail.com
   github:         JessYanCoding
   # 下面这些留空即不显示
